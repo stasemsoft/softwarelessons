@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>OIS12 leerdoelen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="../support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="../support/html/css/highlight-commands.css">
+    <script src="../support/html/highlightjs/highlight.pack.js"></script>
+    <script src="../support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../support/html/css/square-braket-associates.css" rel="stylesheet">
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container text-justify">
+      <section>
+        <h1>OIS12 leerdoelen</h1>
+        <div class="attribution">FHICT</div>
+
+        <a id="cha:ois12learninggoals"></a>
+
+<p>
+Deze leerdoelen komen uit de vakkengids voor het startsemester. Globale doel is dat je alle onderstaande leerdoelen afzonderlijk en gezamenlijk kunt toepassen in een C#-programma dat je schrijft aan de hand van een functionele specificatie. Let op: je moet dit alles uit jezelf kunnen programmeren, alleen code kunnen uitleggen is niet voldoende!
+</p>
+<section>
+<h3>0.0.1. Leerdoelen OIS12 cohort201802</h3>
+
+<p>
+Dit zijn de minimale leerdoelen om tot een voldoende indicatie te komen voor OIS12.
+Hier hoort bij dat de student regelmatig feedback heeft gevraagd aan de docent,
+bovendien redelijk wat bewijsmateriaal heeft verzameld,
+waaronder ook wat grotere projecten waarin diverse leerdoelen integraal en in
+samenhang worden aangetoond.
+</p>
+
+<p>
+<em>We beginnen met de centrale technische leerdoelen van OIS12.</em>
+</p>
+<section>
+<h4>0.0.1.1. constructor</h4>
+<p>
+Je kunt in C# vanuit een specificatie constructors programmeren en deze gebruiken.
+</p>
+<p>
+Bij FUN12 krijg je geleerd hoe je met <code>classes</code> moet werken,
+OIS12 voegt hier aan toe dat je <code>constructors</code> gebruikt om <code>instanties</code>
+van een <code>class</code> te maken.
+</p>
+
+</section><section>
+<h4>0.0.1.2. private/public</h4>
+<p>
+Je weet wat <code>private</code> en <code>public</code> betekent
+en maakt <code>fields</code> in een <code>class</code> altijd <code>private</code>.
+</p>
+<p>
+Als van buiten een <code>object</code> de waarde van een <code>field</code> moet wijzigen
+gaat dit middels hiertoe bestemde <code>methods</code> of <code>properties</code>.
+Dit is niet iets wat je 1 keer laat zien maar wat je vanaf dat moment
+in AL je programma's doet! (dus ook bij FUN12!)
+</p>
+
+</section><section>
+<h4>0.0.1.3. overloading</h4>
+<p>
+Je kunt methodes programmeren met dezelfde naam binnen 1 class
+en je kunt uitleggen wat method overloading betekent.
+</p>
+<p>
+We gebruiken dit bij OIS12 veel voor constructors
+(waarbij dit ook kan, net als bij `gewone' methodes).
+</p>
+
+</section><section>
+<h4>0.0.1.4. property</h4>
+<p>
+Je snapt wat een <code>property</code> is (zowel <em>normaal</em> als <em>auto property</em>)
+en hebt laten zien dat je ze zelf kunt aanmaken.
+</p>
+<p>
+Het snappen wat een property is is het belangrijkste
+aangezien veel voorbeelden op internet met <code>properties</code> werken:
+Mensen die bijvoorbeeld al <code>java</code>kennis hebben en
+(ná aantonen dat ze snappen wat een <code>property</code> is)
+voorkeur hebben voor <code>Get</code> en <code>Set methods</code> mogen dat ook.
+</p>
+
+</section><section>
+<h4>0.0.1.5. List en foreach</h4>
+<p>
+Je kunt programmeren met foreach en lijsten van objecten.
+</p>
+<p>
+Met een lijst wordt hier bedoeld een <code>List&lt;T&gt;</code> waarbij T
+een geldig <code>type</code> is, bijvoorbeeld een zelf geprogrammeerde <code>class</code>.
+</p>
+
+</section><section>
+<h4>0.0.1.6. Van relation tussen classes naar een List</h4>
+<p>
+Je kunt vanuit een gegeven klassendiagram
+relaties in C# programmeren waarbij je gebruik maakt van Lists (lijsten van objecten).
+</p>
+<p>
+Als een <code>object</code> meerdere <code>objecten</code> van een <code>type</code> <code>T</code> bevat wordt dit
+gerealiseerd door eerstgenoemd <code>object</code> een <code>Field</code> te geven
+van het type <code>List&lt;T&gt;</code>.
+</p>
+
+</section><section>
+<h4>0.0.1.7. enum</h4>
+<p>
+Je kunt <code>enums</code> programmeren.
+</p>
+<p>
+Dit wil zeggen dat je weet hoe je dit doet, een keer een goed voorbeeld
+hebt laten zien aan de docent. Verder hou je je ogen open
+tijdens het ontwikkelen: <em>als</em> je een situatie tegen komt die
+roept om een <code>enum</code> gebruik je die.
+Enums kunnen een belangrijk wapen zijn om je code leesbaar en
+onderhoudbaar te houden.
+</p>
+
+
+<p>
+<em>Nu een aantal leerdoelen waarbij je mag laten zien dat je een
+professional in wording bent.</em>
+</p>
+</section><section>
+<h4>0.0.1.8. Professionele houding</h4>
+<p>
+Je stelt je professioneel op.
+Dit blijkt ondermeer uit je aanwezigheid, actieve deelname tijdens de lessen,
+opbouwend kritische houding, samenwerken met anderen en het houden aan afspraken.
+</p>
+<p>
+Als je er een keer tijdens lestijden niet bent,
+pas later aanwezig kunt zijn of eerder weg gaat
+communiceer je dit naar de docent.
+Ook als de les langer duurt dan jij
+zonder roken, gamen of facebook kunt
+en je dus naar buiten gaat (roken) of naar een open ruimte (gamen/facebook):
+dat meld je even bij de docent.
+</p>
+
+</section><section>
+<h4>0.0.1.9. Visual Studio</h4>
+<p>
+Je kunt je eigen Visual Studio-installatie onderhouden.
+</p>
+<p>
+Ook dit leerdoel gaat in belangrijke mate over professionaliteit:
+Zorg dat je je laptop in orde hebt, met visual studio werkend.
+Natuurlijk kunnen er wel eens problemen zijn,
+maar je zorgt dat je een backup hebt zodat je geen weken werk kwijt bent.
+Als je laptop of Visual Studio niet orde zijn weet je binnen afzienbare tijd
+te regelen dat je toch aan het vak kunt werken.
+</p>
+
+</section><section>
+<h4>0.0.1.10. Analyse</h4>
+<p>
+Je kunt een analysedocument schrijven waarbij je
+voorafgaand aan een project een gepriotiriseerde opsomming
+geeft van functionele eisen aan een applicatie.
+</p>
+<p>
+Natuurlijk kan van een startsemesterstudent nog geen volledig analysedocument
+verwacht worden. Wat we echter wel verwachten is dat je
+requirements verwoordt en hier een MoSCoW-indeling van maakt
+op een manier die laat zien dat je de klant serieus neemt.
+Dat wil zeggen dat je aandacht en liefde erin stopt:
+Verzorgde layout en geen taalfouten.
+Tot slot verwerk je eventuele feedback op documenten.
+</p>
+
+</section><section>
+<h4>0.0.1.11. Technical design</h4>
+<p>
+Je bent in staat om vooraf te ontwerpen uit welke klassen
+je applicatie bestaat, en wat de eigenschappen, methoden
+en verantwoordelijkheden van die klassen zijn,
+de relaties tussen deze classes en dit alles op een grafische manier weer te geven.
+</p>
+<p>
+Het gaat er niet om dat je (bijvoorbeeld) <code>UML</code> ('Unified Modeling Language')
+volgens alle regels kunt toepassen: het gaat er om dat je
+voordat je gaat coderen op een (enigszins abstracte) manier over een programma
+kunt praten en hier een grafische weergave kunt maken.
+Je zult ook hier mogelijk feedback op krijgen waar je iets mee zult moeten doen.
+</p>
+
+</section><section>
+<h4>0.0.1.12. UI separation</h4>
+<p>
+Je bent in staat om kleine applicaties te programmeren waarbij er
+een goede scheiding is tussen code in klassen en userinterface-code.
+</p>
+<p>
+Met de kennis en vaardigheden die je nu hebt is deze scheiding nog niet
+altijd mogelijk maar we streven dit zoveel als mogelijk wel na.
+</p>
+
+<p>
+<em>De nu volgende leerdoelen zitten in dit vak omdat je ze
+logischerwijs bij een ander leerdoel tegenkomt
+(collateral).</em>
+</p>
+</section><section>
+<h4>0.0.1.13. FileHandling</h4>
+<p>
+Je moet vanuit een specificatie een C#-programma kunnen schrijven
+waarmee tekstbestanden kunnen worden ingelezen en worden geschreven.
+</p>
+
+</section><section>
+<h4>0.0.1.14. Exception</h4>
+<p>
+Je kunt op een correcte manier excepties in je C#-programma afhandelen.
+</p>
+<p>
+Wat exceptions betreft gaat hier om het gebruik van de <code>try..catch</code>
+op momenten dat dit van toepassing is.
+Net zo belangrijk is dat je het <em>alleen dan</em> gebruikt!
+</p>
+
+</section><section>
+<h4>0.0.1.15. graphics</h4>
+<p>
+Je kunt vanuit een specificatie een programma schrijven
+dat werkt met de diverse functies van de Windows GDI (graphics).
+</p>
+
+
+</section><section>
+<h4>0.0.1.16. static</h4>
+<p>
+Je kunt gebruik maken van bestaande methoden die static zijn
+en je kunt uitleggen wat het static keyword betekent.
+</p>
+
+</section><section>
+<h4>0.0.1.17. casting</h4>
+<p>
+Je weet wat een <code>cast</code> is en kunt <code>casting</code> toepassen in het geval een <code>GUI-control</code>
+verwijst naar een of meerdere <code>objecten</code> van een bepaald type.
+</p>
+<p>
+Hét voorbeeld hiervan binnen OIS12 is dat je een <code>object</code> uit een <code>ListBox</code>
+haalt waarvan je zeker weet dat het van een specifieke <code>class</code> als <code>type</code> heeft:
+Als je een element uit de <code>Items</code> haalt kun je de waarde <code>casten</code> naar
+het juiste <code>type</code>.
+</p>
+<p>
+Verder weet je dat <code>cast</code> inherent <em>onveilig</em> is
+(zeker in sommige programmeertalen) en dus niet onnodig gedaan moet worden.
+</p>
+
+</section><section>
+<h4>0.0.1.18. Value versus Reference Types</h4>
+<p>
+Je kunt het verschil tussen value en reference types uitleggen en er mee programmeren.
+</p>
+<p>
+Dit is niet een leerdoel dat je expliciet moet aantonen.
+</p>
+
+
+</section><section>
+<h4>0.0.1.19. XAML</h4>
+<p>
+Je kunt user interfaces voor applicaties maken
+met zowel de Windows Forms designer als met de XAML designer.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section></section>
+      </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="../support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Git intro and Basic use</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="../support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="../support/html/css/highlight-commands.css">
+    <script src="../support/html/highlightjs/highlight.pack.js"></script>
+    <script src="../support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../support/html/css/square-braket-associates.css" rel="stylesheet">
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container text-justify">
+      <section>
+        <h1>Git intro and Basic use</h1>
+        <div class="attribution">FHICT</div>
+
+        <p>
+
+<figure>
+	<img src="figures/gitlogo.png" width="15%"/>
+	<figcaption>git</figcaption>
+</figure>
+</p>
+<section>
+<h4>0.0.0.1. What is Git?</h4>
+<p>
+Git is created to have distributed version control.
+Serious software development is not possible without using
+some sort of version management.
+It allows you to get back to a specific version
+and it enables people to work together on 1 software system.
+</p>
+<p>
+This Chapter gives first time users a short intro into git.
+For a lot more info please look at the very good book
+<a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a>
+which is free to download.
+</p>
+
+
+</section><section>
+<h4>0.0.0.2. Create a repository</h4>
+
+<p>
+
+<figure>
+	<img src="figures/git_newproject.png" width="40%"/>
+	<figcaption>new project</figcaption>
+</figure>
+</p>
+<p>
+A repository is a place (typically online) where your code and
+all previous versions of it are stored. We will now create a repository at
+the so-called <em>git-lab</em> environment at FHICT
+(only available for FHICT-students;
+An alternative would be creating a repository at <em>GitHub.com</em>,
+which is very similar)
+</p>
+<p>
+Use a browser to go to
+<a href="https://git.fhict.nl">https://git.fhict.nl</a>
+and create a git repository.
+Copy the https-url to your clipboard, we need it in a few minutes.
+</p>
+<p>
+
+<figure>
+	<img src="figures/gitHttpsUrl.png" width="80%"/>
+	<figcaption>git https</figcaption>
+</figure>
+</p>
+
+<p>
+In Git you typically have a <code>repository</code> on a network somewhere where
+all files of your project are stored, including the history of
+<code>commits</code> to those files.
+Furthermore you have a  <code>local repository</code> with all source code versions
+which you regularly <code>synchronize</code> (using <code>push</code> and <code>pull</code>) with
+the remote repository on a server.
+Other people in your team sync with the same remote repository.
+</p>
+<p>
+Advanced uses like <code>branching</code> and <code>tagging</code> we will not use in this course.
+</p>
+</section><section>
+<h4>0.0.0.3. Clone the repository</h4>
+<p>
+Next step is creating a so-called <code>clone</code> locally on your laptop.
+This will be your workspace where you can develop.
+By keeping it up to date with the server
+(<code>pushing</code> your changes to the server
+and <code>pulling</code> the changes of other developers from the server)
+you can work together with other developers.
+</p>
+<p>
+You can choose between several <em>tools</em> to do the <code>pulling</code>
+and <code>pushing</code>,
+some created to be easy to use and some more advanced.
+We will use the <em>command line</em>: the advantages being that <strong>all</strong>
+<code>git</code>-functionality is available from the command line and
+virtually every user using <code>git</code> has this commandline installed.
+The syntax shown here is that of a Unix-command line (terminal or bash),
+which is the same for every Unix, Linux or Mac user.
+If you only have MS-Windows you could install <em>cygwin</em>
+or adjust the commands a little.
+</p>
+<p>
+Start a <em>terminal</em> or <em>bash</em> shell.
+Go to the <code>directory</code> (<em>folder</em>) where you want you workspace to be.
+How?
+Suppose you want to create a directory (<code>mkdir</code> means <em>make dir</em>)
+<em>myProject</em> in your <em>Documents</em> <code>directory</code>
+you type the commands:
+</p><figure><pre><code>cd Documents
+mkdir myProject
+cd myProject</code></pre><figcaption></figcaption></figure>
+<p>
+<code>cd</code> is short for <em>Change Dir</em>.
+Most of the time you don't have to type whole names like <em>Documents</em>:
+just type <em>Doc</em> and
+press the <em>tab</em> key and probably the <em>shell</em> will complete the name.
+</p>
+<p>
+
+<figure>
+	<img src="figures/gitbash1.png" width="80%"/>
+	<figcaption>bash</figcaption>
+</figure>
+</p>
+<p>
+In the <code>terminal</code> <em>clone</em> the git-repository from the server
+to your local directory by typing:
+</p><figure><pre><code>git clone &lt;pasteYourGitUrlHere&gt;</code></pre><figcaption></figcaption></figure>
+<p>
+After that (you will be asked for your <em>username</em>/<em>password</em>)
+you now have a local copy (<em>clone</em>) of the entire history of this repository
+(for a just created project this is still empty of course).
+</p>
+<p>
+To go inside the local <em>repository-directory</em>,
+which after a <em>clone</em> contains the <em>latest</em> version of the files,
+use
+</p><figure><pre><code>cd &lt;dirname&gt;</code></pre><figcaption></figcaption></figure>
+<p>
+Typing <code>git status</code> tells you that (at this moment)
+there’s nothing to commit (which means you don't have made local changes
+to the repository).
+</p>
+
+<p>
+These are only the basics of <em>git</em>.
+In my experience most students use it to <code>commit</code> and <code>push</code> their
+changes right from their <code>IDE</code>. Most <em>IDEs</em> and <em>editors</em> nowadays
+have built-in <code>git</code>-functionality.
+Say for example you use Xcode: see xcode-menu ‘Source Control’:
+when you succeeded with the above doing the same from xcode
+should be a piece of cake! Good luck!
+</p>
+<p>
+For more info about <code>git</code> please look at the very good book
+<a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a>
+which is free to download.
+</p>
+
+
+<p>
+
+<figure>
+	<img src="figures/xcodegit.png" width="50%"/>
+	<figcaption>git from xcode</figcaption>
+</figure>
+
+<figure>
+	<img src="figures/gitgud.png" width="30%"/>
+	<figcaption>git gud</figcaption>
+</figure>
+
+</p></section>
+      </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="../support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>

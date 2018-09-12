@@ -1,0 +1,5 @@
+if (int.TryParse(txtEuroLinks.Text, out getal))
+{
+    // de invoer in txtEuroLinks is een geheel getal en
+    // de waarde zit nu in de variabele ‘getal’.
+}

@@ -1,0 +1,3 @@
+	int penDikte = 1;
+	Pen blackPen = new Pen(Color.Black, penDikte);
+	graphics.DrawRectangle(blackPen, 10, 10, breedte, hoogte);

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Private en Public</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="../support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="../support/html/css/highlight-commands.css">
+    <script src="../support/html/highlightjs/highlight.pack.js"></script>
+    <script src="../support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../support/html/css/square-braket-associates.css" rel="stylesheet">
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container text-justify">
+      <section>
+        <h1>Private en Public</h1>
+        <div class="attribution">FHICT docenten, met name Inge van E, Marcel V, Jan O, Peter L, Björn H, Mark M, Bartosz P, Frenk R, Frank de N, Ruud H, Wilrik de L, Nico K, Frank P, Alexander, Coen C</div>
+
+        <a id="cha:knowPrivatePublic"></a>
+
+<section>
+<h3>0.0.1. Private</h3>
+<ul>
+<li><em>Information hiding</em>: <code>Fields</code> binnen een <code>class</code> maken we altijd <code>private</code>.</li>
+<li>Voordeel: beter onderhoudbare software, programmeurs kunnen vanuit andere <code>classes</code> niet zomaar in de <em>internals</em> van jouw <code>class</code>, maar gebruiken de daarvoor bedoelde <code>methods</code> en/of <code>properties</code>.</li>
+</ul>
+
+
+</section><section>
+<h3>0.0.2. Methods</h3>
+<p>
+<code>Methods</code> die van buitenaf aanroepbaar moeten zijn zijn dus typisch <code>public</code>. Als het <code>methodes</code> betreft die alleen bedoeld zijn voor gebruik binnen de <code>class</code> kun je ze beter <code>private</code> maken.
+</p>
+</section><section>
+<h3>0.0.3. Properties</h3>
+<p>
+Een property definieert vaak een manier om de waarde van een veld op te vragen of zelfs te veranderen. Het opvragen kan vaak <code>public</code> zijn, maar het is bij de meeste velden niet de bedoeling dat de waarde van buitenaf veranderd kan worden.
+</p>
+
+<figure><pre><code>class Persoon
+{
+   // Maak Velden private
+   private string naam;
+   private int leeftijd;
+
+   public Persoon(string Naam, int Leeftijd)
+   {
+      this.naam = Naam;
+      this.leeftijd = Leeftijd;
+   }
+
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Het is nu niet mogelijk van buitenaf de waarde van een <code>veld</code> als <code>leeftijd</code> te veranderen:
+</p>
+<figure><pre><code>Persoon persoon = new Persoon(&quot;Pietje Puk&quot;);
+int leeftijd = persoon.leeftijd;  // dit werkt dus NIET!</code></pre><figcaption></figcaption></figure>
+
+<p>
+Uiteraard kan er in <code>class</code> <em>Persoon</em> een <code>methode</code> gemaakt worden die de waarde van <code>veld</code> <em>leeftijd</em> teruggeeft, een zogenaamde <em>get-method</em>:
+</p>
+<figure><pre><code>public int GetLeeftijd()
+{
+   return this.leeftijd;
+}</code></pre><figcaption></figcaption></figure>
+<p>
+zodat de leeftijd opgevraagd kan worden:
+</p><figure><pre><code>int leeftijd = persoon.GetLeeftijd();</code></pre><figcaption></figcaption></figure>
+<p>
+Merk op dat de <em>leeftijd</em> van buitenaf dus niet veranderd kan worden, maar alleen opgevraagd!
+</p>
+</section><section>
+<h3>0.0.4. Waarom?</h3>
+<p>
+Wat is hier nu het voordeel van? Nou, binnen een jaar zal de ontwikkelaar van deze <code>class</code> de eerste klachten krijgen dat niet de leeftijden niet goed berekend worden, aangezien dat de <em>leeftijd</em> geen vaste waarde is: op het moment dat de <em>persoon</em> jarig is moet de waarde opgehoogd worden.
+In dit geval kun je zien dat het verstandiger is de <em>geboortedatum</em> van de persoon op te slaan (die verandert namelijk niet) en dan wordt bij het opvragen van de <em>leeftijd</em> de goede waarde berekend.
+De programmeur kan nu zonder problemen de <code>class</code> veranderen:
+</p><figure><pre><code>class Persoon
+{
+   // velden
+   private string naam;
+   private DateTime geboortedatum;
+
+   public int GetLeeftijd()
+   {
+      int leeftijd;
+      ... // voeg hier code toe om de leeftijd te berekenen mbv de geboortedatum.
+      return leeftijd;
+   }</code></pre><figcaption></figcaption></figure>
+<p>
+Doordat het veld <em>leeftijd</em> <code>private</code> was kan de programmeur dit aanpassen zonder dat er elders problemen ontstaan in code die hier gebruik van maakt, externe code roept namelijk de methode <em>GetLeeftijd()</em> aan en die zal na de wijziging zonder problemen werken.
+</p>
+
+
+
+</section><section>
+<h3>0.0.5. Encapsulation</h3>
+<p>
+Stel dat er een bug zit in (de waarde van velden van) een bepaalde <code>class</code>, dan is het ook prettig te weten dat (in geval van <code>private</code> velden) de bug ergens in de <code>class</code> moet zitten. Dit wordt <code>Encapsulaton</code> genoemd: een stukje gedrag van een programma wordt afgeschermd. Hierdoor wordt het makkelijker een deel van je programma te hergebruiken.
+</p>
+<p>
+Encapsulatie betekent kortweg dat een groep fields, methodes en overige eigenschappen
+gezien worden als een enkel, afgebakende eenheid of object.
+Dit klinkt wat droog, dus een andere bewoor-ding die mogelijk duidelijker is
+door encapsulatie te zien als het vermogen van een klasse om fields en methodes
+die niet interessant zijn voor anderen, te verbergen.
+</p>
+<p>
+De beste reden om bepaalde onderdelen van je klasse af te schermen is dat je code makkelijker in het gebruik wordt. Klassen gebruiken private fields om hun toestand bij te houden; hoeveel levens heb ik nog, hoe snel mag ik bewegen, et cetera. Deze informatie is voor andere code niet per sé interessant, maar wel essentieel voor de werking van de klasse. Als iedereen zomaar die fields aan zou kunnen passen, wordt de werking van je klasse een stuk onbetrouwbaarder en willekeuriger: wanneer je zelf de enige bent die het aantal levens aan kunt passen, weet je ook precies waar in je code het voor kan komen dat je levens op 0 worden gezet. Dit voordeel valt weg als iedereen het aantal levens aan kan passen.
+</p>
+
+
+
+</section><section>
+<h3>0.0.6. External References</h3>
+
+<p>
+<a href="https://softwareengineering.stackexchange.com/questions/143736/why-do-we-need-private-variables">Over private</a>
+</p>
+<p>
+<a href="http://www.techopedia.com/definition/3787/encapsulation-c">Techopedia</a>
+
+</p></section>
+      </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="../support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>

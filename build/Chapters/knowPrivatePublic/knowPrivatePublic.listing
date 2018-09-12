@@ -1,0 +1,12 @@
+class Persoon
+{
+   // velden
+   private string naam;
+   private DateTime geboortedatum;
+
+   public int GetLeeftijd()
+   {
+      int leeftijd;
+      ... // voeg hier code toe om de leeftijd te berekenen mbv de geboortedatum.
+      return leeftijd;
+   }

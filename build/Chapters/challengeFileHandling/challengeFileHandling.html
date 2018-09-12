@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Challenge File Handling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="../support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="../support/html/css/highlight-commands.css">
+    <script src="../support/html/highlightjs/highlight.pack.js"></script>
+    <script src="../support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../support/html/css/square-braket-associates.css" rel="stylesheet">
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container text-justify">
+      <section>
+        <h1>Challenge File Handling</h1>
+        <div class="attribution">FHICT</div>
+
+        <a id="cha:challengeFileHandling"></a>
+<table style="border: solid thin"><tr><th>Niveau</th>
+<td>5 of 5: integraal.</td>
+</tr>
+<tr><th>Leerdoelen</th>
+<td>Class, Property, Constructor, private/public, UI separation, algoritme.</td>
+</tr>
+<tr><th>Vereiste voorkennis</th>
+<td>Goed om kunnen gaan met classes en objecten en GUI separation.</td>
+</tr>
+<tr><th>Challenge Type</th>
+<td>Programming.</td>
+</tr>
+</table>
+
+
+<section>
+<h4>0.0.0.1. Opdracht</h4>
+<p>
+Bestudeer de C#-klassen van het .NET-framework waar mee je kunt werken met bestanden, folders, mappen enz. C# kent allerlei methoden om tekstbestanden te lezen en te schrijven, bestanden te verplaatsen, folders aan te maken, enz.
+Werk vervolgens een aantal van onderstaande casussen uit om te oefenen met file handling en vraag feedback aan je docent:
+</p>
+
+</section><section>
+<h4>0.0.0.2. De Opdracht</h4>
+<p>
+Kies in overleg met je docent alle of enkele van de onderstaande casussen uit om te oefenen met file handling.
+</p>
+<section>
+<h5>0.0.0.2.1. Casus 0 - Analyse</h5>
+<p>
+Een klasse is te zien als een structuur in C# die een aantal methoden heeft die bij elkaar horen. Schrijf een kort document waar je in beschrijft welke functionaliteiten de volgende klassen in het .NET-framework hebben. Beschrijf wat je als C#-programmeur met deze klassen kunt doen, geef een paar korte codevoorbeelden.
+</p><ul>
+<li>File</li>
+<li>Directory</li>
+<li>DirectoryInfo</li>
+<li>Path</li>
+</ul>
+
+</section><section>
+<h5>0.0.0.2.2. Casus 1 - Tekstbestandzoeker</h5>
+<p>
+Schrijf een Windows Forms C#-programma dat voldoet aan de volgende requirements:
+</p><ol><li>Een user interface met minimaal 2 listboxen.</li>
+<li>Na het opstarten van de app wordt in listbox1 een lijst van alle folders op de root (C:) van je harde schijf getoond.</li>
+<li>Als ik op een folder (item in de listbox) klik dan verschijnt er in de andere listbox een lijst van alle bestanden met extensie .TXT.</li>
+</ol>
+
+
+</section><section>
+<h5>0.0.0.2.3. Casus 1a - For-lus</h5>
+<p>
+Breid de applicatie van casus 1 uit met een for-lus die alle bestanden die met de letter a beginnen NIET laat zien (skipt) in de tweede listbox.
+</p>
+
+</section><section>
+<h5>0.0.0.2.4. Casus 2 - Tekstverwerker</h5>
+<p>
+Maak een applicatie waarmee tekstbestanden kunnen worden bewerkt. De minimale user interface is een tekstveld, een Opslaan-knop en een Openen-knop.
+</p><ol><li>De gebruiker kan vanuit een Windows Forms user interface op een nette manier een tekstbestand selecteren vanuit zijn computer.</li>
+<li>Na een druk op de Openen-knop wordt de volledige inhoud van het bestand dat de gebruiker heeft geselecteerd getoond in een multiline tekstveld. De gebruiker kan desgewenst de tekst in het veld wijzigen.</li>
+<li>Na een druk op de Opslaan-knop wordt de tekst die op dat moment in het tekstveld staat opgeslagen in het eerder geselecteerde bestand.</li>
+</ol>
+
+
+</section><section>
+<h5>0.0.0.2.5. Casus 3 - Word light</h5>
+<ol><li>Maak casus 1 en casus 2.</li>
+<li>Maak een derde applicatie die de functionaliteit van zowel casus 1 als casus 2 bevat. Maak hierbij gebruik van een tab-control waarbij de gebruiker op de eerste tab een bestand kan uitkiezen en op de tweede tab het bestand kan bewerken.</li>
+</ol>
+
+
+</section><section>
+<h5>0.0.0.2.6. Casus 4 - Fruit-generator</h5>
+<ol><li>Laat de applicatie een bestand met de naam &quot;fruit.txt&quot; aanmaken.</li>
+<li>Laat de applicatie op 5 regels de teksten &quot;banaan&quot;, &quot;sinaasappel&quot;, &quot;kiwi&quot;, &quot;mandarijn&quot; en &quot;aardbei&quot; wegschrijven. Open het bestand in Windows Kladblok om te kijken of je applicatie goed werkt.</li>
+<li>Breidt de applicatie uit zodanig dat ze een melding geeft als het bestand &quot;fruit.txt&quot; al bestaat.</li>
+</ol>
+
+
+</section><section>
+<h5>0.0.0.2.7. Casus 5 - Mijn computer</h5>
+<p>
+Maak een applicatie die alle schijven van je computer laat zien (zoals Windows Verkenner dat kan) in een eenvoudige listbox. Zie
+<a href="#fig:mijnComputer">0.1</a>
+</p>
+
+<p>
+<a id="fig:mijnComputer"></a>
+<figure>
+	<img src="figures/mijnComputer.png"/>
+	<figcaption>0.1. Mijn Computer.</figcaption>
+</figure>
+</p>
+</section><section>
+<h5>0.0.0.2.8. Casus 5a</h5>
+<p>
+Voeg aan de Mijn Computer-applicatie de volgende functionaliteiten toe:
+</p><ul>
+<li>Mogelijkheid om een bestand te kopiëren naar een andere locatie</li>
+<li>Mogelijkheid om een bestand te hernoemen</li>
+</ul>
+
+
+</section><section>
+<h5>0.0.0.2.9. Casus 5b (verdieping)</h5>
+<p>
+Toon tijdens het kopiëren van een bestand (zie Casus 5a) een progress bar die aangeeft hoe lang de kopieeractie nog duurt.
+</p>
+
+</section><section>
+<h5>0.0.0.2.10. Casus 6 - Zoek in bestand</h5>
+<p>
+Maak een applicatie die een willekeurig door de gebruiker ingevuld woord kan opzoeken in een bestand. Toon het regelnummer in het bestand waar het woord voorkomt op het scherm.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section></section>
+      </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="../support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>

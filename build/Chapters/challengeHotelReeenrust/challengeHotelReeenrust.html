@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Challenge Hotel Reeënrust</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="../support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="../support/html/css/highlight-commands.css">
+    <script src="../support/html/highlightjs/highlight.pack.js"></script>
+    <script src="../support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../support/html/css/square-braket-associates.css" rel="stylesheet">
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container text-justify">
+      <section>
+        <h1>Challenge Hotel Reeënrust</h1>
+        <div class="attribution">Marcel V, Inge</div>
+
+        <table style="border: solid thin"><tr><th>Datum</th>
+<td>Week 11/12</td>
+</tr>
+<tr><th>Versie</th>
+<td>2018 - Marcel V, Inge</td>
+</tr>
+<tr><th>Leerdoelen</th>
+<td>Analyse, Ontwerp, Realisatie</td>
+</tr>
+<tr><th>Vereiste voorkennis</th>
+<td>Analyse</td>
+</tr>
+<tr><th>Challenge Type</th>
+<td>Integrale Toepassing</td>
+</tr>
+</table>
+
+
+
+<p>
+Aan: Software ontwikkelgroep &quot;De Goeroes&quot;
+</p>
+<p>
+Betreft: specificatie hotelreserveringssysteem
+</p>
+<p>
+Beste ontwikkelaars,
+</p>
+<p>
+Hierbij de specificaties voor het te bouwen hotelsysteem zoals afgesproken:
+</p>
+<section>
+<h3>0.0.1. Omschrijving</h3>
+<p>
+Hotel Reeënrust werkt nu nog met een ingewikkeld systeem van Excel bestanden
+om de reserveringen bij te houden. Graag zouden ze de reserveringen
+in een applicatie willen bijhouden, zodat de werknemers van de receptie
+de reserveringen gemakkelijk kunnen invoeren.
+</p>
+<p>
+Later zou een website ook prettig zijn, zodat klanten zelf
+hun reservering kunnen doen, maar voor nu ligt de focus op de applicatie
+voor de receptie.
+Het is belangrijk dat de applicatie gebruiksvriendelijk is en de gebruiker
+de juiste meldingen krijgt.
+</p>
+</section><section>
+<h3>0.0.2. Scenario</h3>
+<p>
+Een klant belt naar de receptie om een kamer te reserveren.
+De receptionist(e) voert de klantgegevens in en kijkt welke kamer
+voor de opgegeven periode beschikbaar is.
+Als de reservering voor meer dan 4 personen is,
+zullen er meerdere kamers gereserveerd moeten worden.
+Verder geeft de klant per gereserveerde kamer aan
+of er gebruik gemaakt wordt van het ontbijt en/of diner.
+</p>
+<p>
+De receptioniste kan op elk gewenst moment een overzicht opvragen
+van alle reserveringen in het hotel. Tevens kan zij een lijst inzien
+waarin per datum staat welke kamers deelnemen aan het ontbijt of diner.
+De klantgegevens worden opgeslagen in een tekstbestand.
+</p>
+</section><section>
+<h3>0.0.3. Requirements</h3>
+<ul>
+<li>De medewerker kan klantgegevens invoeren (NAW gegevens)</li>
+<li>De medewerker kan een reserveringen doen. Een reservering kan alleen in de toekomst plaatsvinden.</li>
+<li>De medewerker kan zien welke kamers voor een bepaalde periode beschikbaar zijn.</li>
+<li>De klantgegevens worden opgeslagen in een tekstbestand.</li>
+<li>De medewerker kan een overzicht raadplegen met alle reserveringen.</li>
+<li>De medewerker kan van een bepaalde datum een overzicht raadplegen waarin aangegeven staat welke kamers deelnemen aan het ontbijt of diner.</li>
+</ul>
+
+</section><section>
+<h3>0.0.4. Eigenschappen van het hotel</h3>
+<ul>
+<li>Er zijn 120 kamers. Kamer 13 bestaat niet.</li>
+<li>Alle kamers zijn geschikt voor maximaal 4 personen (dit zou in de toekomst kunnen veranderen)</li>
+</ul>
+
+</section><section>
+<h3>0.0.5. Extra</h3>
+<ul>
+<li>Het zou mooi zijn als ook de reserveringen opgeslagen kunnen worden in een tekstbestand. (Hint: Hiervoor dien je gebruik te maken van “Serialization”)</li>
+</ul>
+
+
+<p>
+Hoogachtend verblijven wij,
+</p>
+
+<p>
+Dhr. Drs. P. van Trommelen
+Directeur Hotel Reeënrust
+</p>
+<p>
+
+<figure>
+	<img src="figures/logo_hotel.png" width="50%"/>
+	<figcaption>logo hotel</figcaption>
+</figure>
+
+</p></section>
+      </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="../support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>

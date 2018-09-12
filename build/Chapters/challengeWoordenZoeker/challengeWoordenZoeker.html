@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Challenge Woordenzoeker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="../support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="../support/html/css/highlight-commands.css">
+    <script src="../support/html/highlightjs/highlight.pack.js"></script>
+    <script src="../support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../support/html/css/square-braket-associates.css" rel="stylesheet">
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container text-justify">
+      <section>
+        <h1>Challenge Woordenzoeker</h1>
+        <div class="attribution">Jan Oonk</div>
+
+        <a id="cha:challengeWoordenZoeker"></a>
+<table style="border: solid thin"><tr><th>Versie</th>
+<td>1 - Jan Oonk</td>
+</tr>
+<tr><th>Niveau</th>
+<td>4 of 5.</td>
+</tr>
+<tr><th>Leerdoelen</th>
+<td>Class, Property, Constructor, private/public, UI separation, algoritme, file read/write.</td>
+</tr>
+<tr><th>Vereiste voorkennis</th>
+<td>Method, GUI, Basic Types, If.</td>
+</tr>
+<tr><th>Challenge Type</th>
+<td>Programming, algoritme.</td>
+</tr>
+</table>
+
+
+<p>
+<a id="woordenzoeker"></a>
+<figure>
+	<img src="figures/woordenzoeker.png" width="70%"/>
+	<figcaption>0.1. woordenzoeker</figcaption>
+</figure>
+</p>
+<p>
+Op basis van een set woorden (uit een tekstbestand) een woordenzoeker puzzel van een opgegeven breedte x hoogte genereren. Woorden worden verstopt zowel horizontaal (links-rechts al dan niet achtste voren) als verticaal (boven-beneden al dan niet achterste voren). Zorg ervoor dat de woorden binnen het speelveld blijven en niet “wrappen” naar de andere kant van het speelveld.
+</p>
+<p>
+Daarna moet de speler de woorden kunnen zoeken. Een deel van het spelersscherm bestaat uit overzicht van woorden die gezocht moeten worden en ander deel is het speelveld van letters.
+</p>
+<p>
+Speler kan woorden aanstrepen in het speelveld door letters te kiezen middels de linkerknop van de muis. Een letter die al geselecteerd is, wordt bij opnieuw aanklikken gedeselecteerd. De gekozen letters worden meteen automatisch gecontroleerd na aanklikken.
+</p>
+<p>
+Letters kunnen alleen worden geselecteerd in dezelfde richting als de vorige geselecteerde letter(s). Als de geselecteerde letters als woord worden herkend in de lijst van verstopte woorden dan wordt deze doorgestreept.
+</p>
+<p>
+Tijdens het selecteren van letters, worden oranje omcirkeld. Als de geselecteerde letters een nog te zoeken woord vormen worden de cirkels definitief groen.
+</p>
+<p>
+Letters kunnen vaker worden geselecteerd en onderdeel zijn van meerdere woorden.
+</p>
+<p>
+Laat een timer zien hoe lang de speler al aan het spelen is.
+</p>
+<p>
+Om de letters in de vakjes te plaatsen kan je <code>DrawText</code> gebruiken of een <em>Sprite Generator</em> (gebruik monospace font als <em>Consolas,Regular,72</em>) gebruiken en deze plaatjes dynamisch inladen.
+</p>
+<section>
+<h4>0.0.0.1. Leerdoelen OIS12</h4>
+
+<dl><dt>Zeker:</dt>
+<dd>Class, constructor, private/public, property, field, method, file handling, GDI graphics, enum, lijsten,</dd>
+<dt>Hoogstwaarschijnlijk/goed mogelijk:</dt>
+<dd>method/constructor overloading, UML, excepties, static, casting</dd>
+<dt>Eventueel:</dt>
+<dd>XAML</dd>
+</dl>
+
+</section><section>
+<h4>0.0.0.2. Bronnen</h4>
+
+<p>
+<a href="https://www.scirra.com/forum/sprite-font-generator-v3_t86546">Sprite Font Generator</a>
+</p>
+<p>
+<a href="https://stackoverflow.com/questions/6311545/c-sharp-write-text-on-bitmap">Write Text on a Bitmap</a>
+</p>
+</section><section>
+<h4>0.0.0.3. Bronnen benodigd bij de extra features</h4>
+
+<p>
+<a href="https://www.ambiera.com/irrklang/downloads.html">Sound Engine</a>
+</p>
+<p>
+<a href="http://csharp-station.com/Tutorial/AdoDotNet">Database connectie e.d.</a>
+</p>
+<p>
+<a href="https://msdn.microsoft.com/en-us/library/system.net.webclient(v=vs.110).aspx">Webclient</a>
+</p>
+<p>
+<a href="https://docs.microsoft.com/en-us/dotnet/framework/network-programming/how-to-request-data-using-the-webrequest-class">How to: Request Data Using the WebRequest Class</a>
+</p>
+<p>
+<a href="https://stackoverflow.com/questions/4988286/what-difference-is-there-between-webclient-and-httpwebrequest-classes-in-net">What difference is there between WebClient and HTTPWebRequest classes in .NET?</a>
+</p>
+<p>
+<a href="https://www.newtonsoft.com/json">JSON Parser</a>
+</p>
+
+</section><section>
+<h4>0.0.0.4. Variatie / extra features:</h4>
+
+<dl><dt>Niveau -</dt>
+<dd>Feature</dd>
+<dt>* -</dt>
+<dd>sla de highscores (is verstreken speeltijd) en de naam van de speler op in een bestand.</dd>
+<dt>* -</dt>
+<dd>Variatie toevoegen, via een menuoptie, om getallen te zoeken i.p.v. woorden.</dd>
+<dt>* -</dt>
+<dd>moeilijkheid van de te genereren puzzel is in te stellen via een start menu o.i.d., bijv. door woorden vaker achterste voren in de puzzel te zetten, diagonaal te plaatsen.</dd>
+<dt>* -</dt>
+<dd>Als alle woorden gevonden zijn dient de speler de overgebleven letters in de juiste volgorde te zetten om zo een woord of correcte zin te vormen.</dd>
+<dt>* -</dt>
+<dd>categoriseer de woorden in thema’s, zodat verstopte woorden allemaal met elkaar te maken hebben bijv. categorie/thema Planten, Films o.i.d.</dd>
+<dt>* -</dt>
+<dd>De woorden, die in de te genereren puzzel worden verstopt, uit een database halen i.p.v. een bestand. Maak eerst een eenvoudig database model en ontwerp.</dd>
+<dt>* -</dt>
+<dd>Voeg leuke soundeffects toe bij bepaalde events zoals correct woord, incorrect woord, letter selecteren, puzzel af e.d.</dd>
+<dt>* -</dt>
+<dd>Als op escape wordt gedrukt, worden de eventuele geselecteerde letters gedeselecteerd.</dd>
+<dt>* -</dt>
+<dd>2e letter selectie manier inbouwen: letters kunnen ook worden geselecteerd door de linkerknop in te houden en te slepen. Alle letters worden geselecteerd tussen beginletter en muispositie. Bij loslaten wordt het woord, dat gevormd wordt door de selecteerde letters, gecontroleerd. Is het fout/nog niet goed dan kan in dezelfde richting opnieuw worden geselecteerd (door de normale manier of deze nieuwe manier), de vorige geselecteerde letters blijven dus actief (oranje).</dd>
+<dt>* -</dt>
+<dd>Als je letters selecteert door deze aan te klikken en je kiest de volgende letter niet in dezelfde richting en/of de letter is niet aangesloten met 1 van de zojuist eerdere geselecteerde letters dan worden al deze geselecteerde letters gedeselecteerd.</dd>
+<dt>** -</dt>
+<dd>sla de highscores op op een centrale plek (file of database). Maak hiervoor een eenvoudige webservice.</dd>
+<dt>** -</dt>
+<dd>spelers willen graag hun highscores op een eerlijke manier met elkaar vergelijken, dus zorg ervoor dat de puzzels op exact dezelfde manier aan de verschillende spelers wordt gepresenteerd, dus alle letters in een puzzel en verstopte woorden staan op exact dezelfde plek. Toon de highscores per puzzel. Geef hiervoor elke puzzel een unieke naam of id. Toon dit in een selectiemenu zodat je een bepaalde puzzel kan inladen.</dd>
+<dt>*** -</dt>
+<dd>Als snel blijkt de highscore webservice (zie ** uitbreiding) te zijn gehacked door script kiddies die de url hebben weten te achterhalen. Verzin een manier om de webservice te beveiligen, zodat er niet onrealistische of onterechte highscores kunnen worden verstuurd naar de webservice.</dd>
+</dl>
+</section>
+      </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="../support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,5 @@
+snails.Add( new Snail(2,8) );
+snails.Add( new Snail(1,8) );
+snails.Add( new Snail(4,6) );
+snails.Add( new Snail(3,8) );
+snails.Add( new Snail(3,9) );

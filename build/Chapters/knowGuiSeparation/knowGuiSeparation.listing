@@ -1,0 +1,8 @@
+public class Bankaccount {
+  private string nr;
+  private Client owner;
+  ...
+  public override string ToString() {
+    return this.nr + ": " + this.owner.GetName();
+  }
+}

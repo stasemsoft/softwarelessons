@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Text File Handling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="../support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="../support/html/css/highlight-commands.css">
+    <script src="../support/html/highlightjs/highlight.pack.js"></script>
+    <script src="../support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../support/html/css/square-braket-associates.css" rel="stylesheet">
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container text-justify">
+      <section>
+        <h1>Text File Handling</h1>
+        <div class="attribution">FHICT</div>
+
+        <p>
+Om te kunnen schrijven naar een Text File of het lezen van
+een Text File moet je bovenaan in de C#-File het volgende toevoegen:
+</p><figure><pre><code>using System.IO;</code></pre><figcaption></figcaption></figure>
+
+<section>
+<h3>0.0.1. Voorbeeldcode voor het lezen uit een TextFile</h3>
+
+<p>
+Om een <code>Text File</code> te kunnen lezen heb je een zogenaamde <code>Stream</code>
+nodig op de File.
+</p>
+<p class="note">Het pad waar de File wordt weggeschreven is relatief ten opzichte van de executable, dus zoek (by default) in je <em>bin</em> <em>debug</em>. Met '..' ga je een directory hoger: '../bloemkool.txt'</p>
+<p>
+Maak een StreamReader aan op de stream:
+</p><figure><pre><code>StreamReader reader = new StreamReader(fileStream);</code></pre><figcaption></figcaption></figure>
+
+<p>
+en vervolgens kan één regel ingelezen worden met
+</p><figure><pre><code>regel = reader.ReadLine();</code></pre><figcaption></figcaption></figure>
+
+<p>
+Na de laatste regel retourneert <em>ReadLine()</em> een <code>null</code>.
+Door een loop te maken kan dus gelezen worden tot het einde.
+Tot slot moeten de <em>reader</em> en de <em>stream</em> ge<em>Closed</em> worden.
+</p>
+<p>
+Er omheen zetten we een <code>try...catch...finally</code>.
+Als bij uitvoering van de code in het <code>try</code>-blok er een
+<code>Exception</code> optreedt (kan zijn dat de File niet bestaat,
+of er geen read-rechten zijn) springt de programma-uitvoering
+meteen door naar het <code>catch</code>-block: hier kan gekeken worden
+wat er fout is. Er kan een melding aan de gebruiker gegeven
+worden wat er mis is, of er wordt iets in een log opgeslagen.
+Tot slot het <code>finally</code> blok: dit wordt ALTIJD uitgevoerd:
+zowel als er een Exception is als wanneer het <code>try</code> blok
+succesvol is uitgevoerd. Door de <em>Close</em> in de <code>finally</code>
+te zetten weet je zeker dat na afloop de file gesloten is.
+</p>
+<p>
+Dat ziet er dus alsvolgt uit:
+</p><figure><pre><code>String line;
+try
+{
+	StreamReader reader = new StreamReader(&quot;C:\\bloemkool.txt&quot;);
+	// read the first line
+	line = reader.ReadLine();
+
+	//until you get to the end: read line by line.
+	while (line != null)
+	{
+		// 'Verwerk' moet je zelf programmeren:
+		Verwerk(line);
+		// read next line:
+		line = reader.ReadLine();
+	}
+}
+catch(Exception exc)
+{
+	// Handel het probleem af.
+	HandleException(exc);
+}
+finally
+{
+	// and close the reader.
+	reader.Close();
+}</code></pre><figcaption></figcaption></figure>
+
+
+</section><section>
+<h3>0.0.2. Schrijven van een Text File</h3>
+
+<p>
+Het schrijven gaat vergelijkbaar met het lezen:
+</p>
+<figure><pre><code>try
+{
+	StreamWriter writer = new StreamWriter(&quot;C:\\spruitjes.txt&quot;);
+	// Schrijf wat je wilt naar de File:
+	// WriteLine voor een regel mét zogenaamde EndOfLine (EOL) erachter.
+	writer.WriteLine(&quot;Hello File.&quot;);
+	// Write om te schrijven zónder EOL.
+	writer.Write(&quot;Nog &quot;);
+	writer.WriteLine(&quot;meer text.&quot;);
+}
+catch(Exception exc)
+{
+	// Handel het probleem af.
+	HandleException(exc);
+}
+finally
+{
+	writer.Close();
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Het aanmaken van een StreamWriter kan ook met andere parameters,
+bijvoorbeeld:
+</p><figure><pre><code>new StreamWriter(&quot;C:\\spruitjes.txt&quot;, true, Encoding.ASCII);</code></pre><figcaption></figcaption></figure>
+<ul>
+<li>De encoding geeft aan hoe de karakters in de File worden geëncodeerd.</li>
+<li>De <em>true</em> geeft in het voorbeeld hierboven aan of er ge<em>append</em> moet worden of dat de File overschreven moet worden.</li>
+</ul>
+
+</section><section>
+<h3>0.0.3. Terminologie</h3>
+
+<p>
+Dit kun je verder nog uitzoeken als je het nodig hebt:
+</p><ul>
+<li>Wat is de betekenis van de volgende woorden?<ul>
+<li>File, Bestand</li>
+<li>Directory, Pad, Folder, Map</li>
+<li>UNC</li>
+<li>URL</li>
+</ul>
+</li>
+<li>Hoe ziet een pad er uit in Windows Verkenner, Command Prompt, Linux, Mac OSX?</li>
+</ul>
+
+
+</section><section>
+<h3>0.0.4. File handling klassen</h3>
+<p>
+Het .NET framework biedt een aantal klassen* om met bestanden te kunnen werken:
+</p><ul>
+<li>File</li>
+<li>Directory</li>
+<li>DirectoryInfo</li>
+<li>Path</li>
+</ul>
+
+</section><section>
+<h3>0.0.5. Iets over Exception Handling</h3>
+<p>
+<code>FileNotFoundException</code>, <code>NullPointerException</code>, enzovoort.
+Al die fouten die jij ziet als je een programma test ziet de gebruiker ook.
+Maar als de gebruiker ze ziet dan crasht zijn programma!
+Als software engineer dien je mogelijke exceptionele situaties te voorkomen.
+C# heeft hiervoor de keywords <code>try</code>, <code>catch</code> en <code>finally</code>.
+</p>
+<p>
+Regelmatig wil je de structuur van je code niet helemaal aanpassen aan
+exceptionele situaties die je als een <em>uitzondering</em> wilt beschouwen.
+Een voorbeeld is wanneer je programma een <code>connectie</code> met een <code>database</code>
+nodig heeft, of <code>requests</code> naar internet stuurt:
+je wil dan niet elke keer checken of de connectie naar database of internet
+nog wel werkt, maar <strong>als</strong> de connectie verloren is gegaan
+dan moet je programma daar wel mee om kunnen gaan.
+</p>
+<p>
+In C# doe je dat door om je code een <code>try-catch-clause</code> te zetten,
+zoals je hierboven gezien hebt.
+</p>
+
+<section>
+<h4>0.0.5.1. Andere bronnen over Exception Handling in C#</h4>
+
+<p>
+<a href="http://www.csharp-station.com/Tutorial/CSharp/Lesson15">Exceptions at CSharp-station</a>
+</p>
+<p>
+<a href="https://msdn.microsoft.com/en-us/library/ms173162.aspx">Exceptions at MSDN</a>
+</p>
+<p>
+<a href="https://msdn.microsoft.com/en-us/library/2kzb96fk.aspx">MSDN</a>
+
+</p></section></section>
+      </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="../support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>

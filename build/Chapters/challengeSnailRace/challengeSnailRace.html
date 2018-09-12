@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Challenge SnailRace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="../support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="../support/html/css/highlight-commands.css">
+    <script src="../support/html/highlightjs/highlight.pack.js"></script>
+    <script src="../support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../support/html/css/square-braket-associates.css" rel="stylesheet">
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container text-justify">
+      <section>
+        <h1>Challenge SnailRace</h1>
+        <div class="attribution">FHICT</div>
+
+        <table style="border: solid thin"><tr><th>Datum</th>
+<td>Week 14/15</td>
+</tr>
+<tr><th>Versie</th>
+<td>2018 - FHICT</td>
+</tr>
+<tr><th>Leerdoelen</th>
+<td>Realisatie</td>
+</tr>
+<tr><th>Vereiste voorkennis</th>
+<td>Classes</td>
+</tr>
+<tr><th>Challenge Type</th>
+<td>Integrale Realisatie</td>
+</tr>
+</table>
+
+
+<section>
+<h3>0.0.1. Inleiding</h3>
+<p>
+Voor de Grote Slakkenrace 2019 moet vanaf een leeg project met Visual Studio
+een applicatie gemaakt worden om een SlakkenRace mee te kunnen houden.
+</p>
+<p>
+1.	Maak een nieuw Windows Form Project aan.
+</p>
+<p>
+2.	Hernoem ‘Form1’naar ‘SnailRaceForm’.
+Als je dit doet door in de <em>Solution Explorer</em> de <em>file</em> te <em>renamen</em>
+stelt Visual Studio voor dat ie het <em>Code Element</em> (in dit geval dus het Form)
+ook hernoemt: mooi!
+</p>
+<p>
+3.	Maak een nieuwe class Snail aan.
+<code>Ctrl+Shift+A</code> (of rechtermuisknop op project in <em>Solution Explorer</em>),
+een <em>class name</em>/<em>file name</em> intypen en <code>OK</code>.
+</p>
+<p>
+4.	Zet op het Form onder elkaar 5 PictureBoxes, recht onder elkaar, gebruik voor elk het plaatje ‘snail.jpg’.
+Als je het slim doet sleep je er 1 op je <em>Form</em>,
+voegt er een plaatje aan toe en kopieert de <em>PictureBox</em> nog een aantal maal
+(gebruik <code>ctrl+C</code> en <code>ctrl+V</code>).
+</p>
+<p>
+5.	Voeg een button met Text ‘Race’ toe.
+</p>
+
+<p>
+6.	Maak in class Snail een constructor aan met (voor nu) 2 parameters:
+</p><ul>
+<li>int minimumSpeed</li>
+<li>int maximumSpeed</li>
+</ul>
+
+<p>
+7.	Voeg 2 private Fields toe (ook wel member variabelen of instance variabelen genoemd):
+</p><ul>
+<li>minimumSpeed</li>
+<li>maximumSpeed</li>
+</ul>
+
+<p>
+8.	Class Snail moet nu een <code>Field</code> ‘pictureBox’ van het type PictureBox krijgen
+(voeg hiervoor aan het begin van de file toe: using System.Windows.Forms;).
+Let op: een <em>professional software engineer</em> zou het zo niet doen: Als je al een betere manier weet doe het dan op die manier!
+Je mag zelf kiezen of je dit Field public of private maakt.
+</p>
+<p>
+9.	Voeg een <code>Field</code> toe aan het Form (dus niet in een methode gedeclareerd maar er buiten) van type List&lt;Snail&gt;:
+</p><figure><pre><code>List&lt;Snail&gt; snails = new List&lt;Snail&gt;();</code></pre><figcaption></figcaption></figure>
+
+<p>
+10.	Voeg in SnailRaceForm_Load (als je deze nog niet hebt, dubbelklik dan op het Form) de volgende code toe:
+</p><figure><pre><code>snails.Add( new Snail(2,8) );
+snails.Add( new Snail(1,8) );
+snails.Add( new Snail(4,6) );
+snails.Add( new Snail(3,8) );
+snails.Add( new Snail(3,9) );</code></pre><figcaption></figcaption></figure>
+
+<p>
+11.	Verzin (en realiseer) een manier om elke snail te laten weten welke PictureBox daar bij hoort.
+ 
+12.	Voeg nog een smalle maar hoge PictureBox toe rechts op het scherm.
+</p>
+<p>
+13.	Als op button Race wordt geklikt glijden alle slakken om de beurt een stukje naar rechts totdat de eerste(n) tegen de muur gelopen is/zijn.
+</p><ul>
+<li>a.	Let op: alle slakken moeten allemaal evenveel beurten krijgen.</li>
+<li>b.	Voeg in class Snail een methode toe ‘GlijEenStukje()’die de X-waarde aanpast en een boolean waarde retourneert: true als die slak in die beurt tegen de muur botste, en anders false.</li>
+<li>c.	Een MessageBox meldt achteraf de winnaar(s).</li>
+<li>d.	Gebruik 1 Random-object in het hele programma.</li>
+<li>e.	Hou met de ‘stapgrootte’ van elke slak met zijn minimum- en maximumsnelheid. Bijvoorbeeld een slak die minimum 3 en maximum 6 heeft moet per beurt een random getal tussen 3 en 6 opschuiven (Of de waarden 3 en 6 ook mogen mag je zelf bepalen).</li>
+</ul>
+
+<p>
+14.	Elke winnaar krijgt er een bedrag bij. Dit bedrag kan later veranderen maar op dit moment is dat 12,25 euro. Voeg labels toe met van elke racer het bedrag dat hij tot nu toe verdiend heeft. Gebruik hiervoor string formatting.
+</p>
+</section>
+      </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="../support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>

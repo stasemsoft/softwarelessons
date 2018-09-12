@@ -1,0 +1,6 @@
+private Random Randje;
+
+public Zet BedenkEenZet()
+{
+   return new Zet(Randje.Next(7));
+}

@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>OIS11-dictaat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="../support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="../support/html/css/highlight-commands.css">
+    <script src="../support/html/highlightjs/highlight.pack.js"></script>
+    <script src="../support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../support/html/css/square-braket-associates.css" rel="stylesheet">
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container text-justify">
+      <section>
+        <h1>OIS11-dictaat</h1>
+        <div class="attribution">FHICT</div>
+
+        <a id="cha:knowOis11dictaat"></a>
+
+<section>
+<h3>0.0.1. Werken met variabelen in C#</h3>
+<p>
+Dit hoofdstuk is geschreven als een <em>naslagwerk</em>,
+het is niet geschikt om uit te leren hoe je met variabelen programmeert.
+</p>
+<section>
+<h4>0.0.1.1. Typen variabelen</h4>
+
+<p>
+Een variabele is een stukje geheugen waarin tijdelijk
+een waarde kan worden  opgeslagen. De veelgebruikte typen variabelen zijn:
+</p>
+
+<table style="border: solid thin"><tr><th>Inhoud</th>
+<th>Naam</th>
+<th>Voorbeelden</th>
+</tr>
+<tr><td style="text-align: left">Stukje tekst</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">&quot;abcde&quot;</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">&quot;dit is een tekst&quot;</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">&quot;&quot;</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">etc.</td>
+</tr>
+<tr><td style="text-align: left">Geheel getal</td>
+<td style="text-align: left">Int</td>
+<td style="text-align: left">12</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">-1337</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">0</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">etc.</td>
+</tr>
+<tr><td style="text-align: left">Komma getal</td>
+<td style="text-align: left">Double</td>
+<td style="text-align: left">10.2</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">-12.3</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">5.0</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">etc.</td>
+</tr>
+<tr><td style="text-align: left">Waar of niet waar</td>
+<td style="text-align: left">Bool</td>
+<td style="text-align: left">true, false</td>
+</tr>
+</table>
+
+
+</section><section>
+<h4>0.0.1.2. Variabele aanmaken (declareren)</h4>
+<p>
+Variabelen kunnen op verschillende manieren worden aangemaakt,
+enkele voorbeelden staan hier-onder. Merk op dat:
+</p><ul>
+<li>Je de variabele naam zelf kunt kiezen</li>
+<li>De regel moet worden beeindigd met een &quot;;&quot;-teken</li>
+</ul>
+
+<p>
+Op verschillende manieren kunnen variabelen worden aangemaakt. Programmeer op een lege regel het type van de variabele (zie hierboven), de naam die je de variabele wil geven (deze kies je zelf) en een &quot;;&quot; teken om het programmeercommando af te sluiten.
+</p>
+<table style="border: solid thin"><tr><th>Voorbeeld</th>
+<th>Effect</th>
+</tr>
+<tr><td style="text-align: left">String s;</td>
+<td style="text-align: left">Variabele met de naam s wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is &quot;&quot;.</td>
+</tr>
+<tr><td style="text-align: left"><code>int i;</code></td>
+<td style="text-align: left">Variabele met de naam <code>i</code> wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is 0.</td>
+</tr>
+<tr><td style="text-align: left"><code>double d;</code></td>
+<td style="text-align: left">Variabele met de naam &quot;d&quot; wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is 0.0</td>
+</tr>
+<tr><td style="text-align: left">Bool b;</td>
+<td style="text-align: left">Variabele met de naam &quot;b&quot; wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is false</td>
+</tr>
+<tr><td style="text-align: left">String mijnString;</td>
+<td style="text-align: left">Variabele met de naam &quot;mijnString&quot; wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is &quot;&quot;</td>
+</tr>
+<tr><td style="text-align: left">int getal;</td>
+<td style="text-align: left">Variabele met de naam &quot;getal&quot; wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is 0</td>
+</tr>
+<tr><td style="text-align: left">double straal;</td>
+<td style="text-align: left">Variabele met de naam &quot;straal&quot; wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is 0.0</td>
+</tr>
+</table>
+
+<p>
+Direct na het aanmaken heeft een <code>variabele</code> een <code>waarde</code> die we
+de <code>default waarde</code> noemen. Dit kan per programmeertaal enigszins
+verschillen. Daarom is het een goede gewoonte variabelen waarvan je
+wil dat ze een specifieke waarde hebben deze waarde expliciet
+toe te kennen.
+</p>
+</section><section>
+<h4>0.0.1.3. Waarde aan variabele geven (toekenning of <code>assignment</code>)</h4>
+<p>
+Als een variabele eenmaal is aangemaakt kan hier een waarde aan worden toegekend.
+Merk op:
+</p><ul>
+<li>Alleen geldige waarden kunnen worden toegekend (string waarden aan strings, getallen aan int, etc.), het programmeren van een niet geldige toekenning levert een fout op waardoor het programma niet kan worden uitgevoerd.</li>
+<li>De variabele waaraan een waarde moet worden toegekend staat aan de linkerkant van het &quot;=&quot; teken, en de waarde welke in de variabele moet worden gestopt staat rechts van het &quot;=&quot; teken.</li>
+<li>De regel code wordt weer beeindigd met het &quot;;&quot;-teken.</li>
+</ul>
+
+<p>
+Hier volgen enkele voorbeelden. In commentaar staat erbij uitgelegd
+wat het betekent.
+</p><figure><pre><code>String s;     // maak een variabele aan met naam &quot;s&quot;.
+s = &quot;test&quot;;	  // Variabele met de naam &quot;s&quot; krijgt de waarde &quot;test&quot;.</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>int i;
+i = 10;	// maak variabele met naam &quot;i&quot; aan en geef die waarde 10</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>double d;
+d = 1.52; //	Nieuwe variabele genaamd &quot;d&quot; krijgt de waarde 1,52</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>bool b;
+b = true;	// Nieuwe variabele &quot;b&quot; krijgt de waarde true</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>String string1;
+string 1 = &quot;abc&quot;;
+String string2;
+string2 = string1;	// Variabele met de naam &quot;string2&quot; krijgt
+                    // de waarde van &quot;string1&quot;, namelijk &quot;abc&quot;</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>int getalA;
+getalA = 5;
+int getalB;
+getalB  = getalA;	// Variabele met de naam &quot;getalB&quot; krijgt
+                  // de waarde van &quot;getalA&quot;, namelijk 5</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>double kommaGetalA;
+kommaGetalA = 1.32;
+double kommaGetalB;
+kommaGetalB  = kommaGetalA;	// Variabele met de naam &quot;kommaGetalB&quot; krijgt
+                            // de waarde van &quot;kommaGetalA&quot;,
+                            // namelijk 1.32</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>String s;
+s = textBox1.Text;
+    // Variabele met de naam &quot;s&quot; krijgt
+    // als waarde de tekst die in de
+    // TextBox genaamd &quot;textBox1&quot; staat.</code></pre><figcaption></figcaption></figure>
+<p>
+Dit werkt omdat de <code>Text property</code> van de <em>TextBox</em> ook
+van het <code>type</code> <code>string</code> is.
+</p>
+
+</section><section>
+<h4>0.0.1.4. Variabele aanmaken en direct een waarde geven (<code>declare</code> en <code>initialize</code>)</h4>
+
+<p>
+Variabele met de naam <em>s</em> aanmaken en waarde &quot;test&quot; toekennen:
+</p><figure><pre><code>String s = &quot;test&quot;;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele met de naam <em>i</em> aanmaken en waarde <code>10</code> toekennen:
+</p><figure><pre><code>int i =10;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele met de naam <em>d</em>  aanmaken en waarde <code>1,52</code> toekennen:
+</p><figure><pre><code>double d = 1.52;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele met de naam <em>b</em> aanmaken en waarde <code>true</code> toekennen:
+</p><figure><pre><code>bool b = true;</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h4>0.0.1.5. Waarden omzetten naar andere typen (<code>convert</code>)</h4>
+<p class="note">Merk op: het omzetten van een <code>int</code> of <code>double</code> naar een <code>String</code> lukt altijd, andersom lukt niet altijd en kan een foutmelding opleveren tijdens het uitvoeren van het programma (<code>crash</code> of <code>Unhandled Exception</code>).</p>
+<p class="note">Een <code>bool</code> variabele kan niet worden geconverteerd.</p>
+<p>
+Zet de waarde van <em>i</em> om
+naar een tekst met dezelfde waarde. Het
+resultaat van de laatste regel is dat variabele <em>s</em> de waarde <code>81</code> krijgt.
+</p><figure><pre><code>int i = 81;
+String s;
+s = Convert.ToString(i);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Zet de waarde van <em>d</em> om naar een tekst met dezelfde waarde.
+Het resultaat van de laatste regel is dat variabele <em>s</em>
+de waarde <code>&quot;12.33&quot;</code> krijgt:
+</p><figure><pre><code>double d =12.33;
+String s;
+s = Convert.ToString(d);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Zet de waarde van <em>s</em> om naar een geheel getal (<code>integer</code>)
+met dezelfde waarde als dat lukt (anders krijg je een foutmelding).
+Het resultaat van de laatste regel is dat variabele <em>i</em> de
+waarde <code>7</code> krijgt:
+</p><figure><pre><code>int i;
+String s = &quot;7&quot;;
+i  = Convert.ToInt32(s);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Zet de waarde van <em>s</em> om naar een <em>kommagetal</em> met
+dezelfde waarde als dat lukt (anders krijg je een foutmelding).
+Het resultaat van de laatste regel is dat variabele <em>d</em> de
+waarde <code>12.129</code> krijgt:
+</p><figure><pre><code>double d;
+String s = &quot;12.129&quot;;
+d  = Convert.ToDouble(s);</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h4>0.0.1.6. String bewerkingen (String functies)</h4>
+<p>
+Hieronder worden enkele veelgebruikte String functies gedemonstreerd en kort toegelicht.
+</p>
+<section>
+<h5>0.0.1.6.1. String’s samenvoegen</h5>
+<p>
+Met het <code>plus</code> teken kunnen strings aan elkaar worden geplakt.
+</p><figure><pre><code>string tekst = &quot;een tekst.&quot;;
+string woorden = &quot;Hier staat&quot;;
+string s = woorden+tekst;</code></pre><figcaption></figcaption></figure>
+
+<p>
+De <code>s</code> <code>variabele</code> krijgt hier de waarde <code>&quot;Hier staateen tekst.&quot;</code> Merk op dat niet automatisch spaties worden toegevoegd.
+</p>
+<figure><pre><code>  string tekst = &quot;tekst.&quot;;
+  string woorden = &quot;Hier staat&quot;;
+  string s = woorden + &quot; een &quot; + tekst;</code></pre><figcaption></figcaption></figure>
+
+<p>
+	 Met het &quot;+&quot;-teken kunnen strings aan elkaar worden geplakt.
+De &quot;s&quot; variabele krijgt hier de waarde &quot;Hier staat een tekst.&quot;
+</p>
+</section><section>
+<h5>0.0.1.6.2. <code>IndexOf</code></h5>
+
+<p>
+De plaats van een String binnen een andere String bepalen:
+</p>
+<p>
+De <em>Positie</em> variabele krijgt de waarde <code>1</code>.
+Merk op dat de positie van de eerste gevonden &quot;e&quot; in de String
+wordt gevonden (waarbij vanaf <code>0</code> wordt geteld):
+</p><figure><pre><code>string tekst = &quot;regel tekst&quot;;
+int positie = tekst.IndexOf(&quot;e&quot;);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Er kan ook naar meerdere letters achter elkaar gezocht worden:
+</p><figure><pre><code>string tekst = &quot;regel tekst&quot;;
+int positie = tekst.IndexOf(&quot;tek&quot;);</code></pre><figcaption></figcaption></figure>
+<p>
+De &quot;Positie&quot; variabele krijgt de waarde 6.
+</p>
+<p>
+<strong>Niet gevonden</strong> geeft <code>-1</code>:
+</p><figure><pre><code>string tekst = &quot;regel tekst&quot;;
+int positie = tekst.IndexOf(&quot;a&quot;);</code></pre><figcaption></figcaption></figure>
+<p>
+De &quot;Positie&quot; variabele krijgt de waarde -1. De waarde -1 betekent dus: de String komt niet voor binnen de andere String.
+</p>
+</section><section>
+<h5>0.0.1.6.3. Substring</h5>
+<p>
+Een stukje uit een string kopiëren:
+</p><figure><pre><code>string tekst = &quot;regel tekst&quot;;
+string deelTekst = tekst.Substring(0, 1);</code></pre><figcaption></figcaption></figure>
+<p>
+wat heeft als resultaat dat in deelTekst de waarde &quot;r&quot; komt te staan omdat van de oorspronkelijke tekst vanaf positie 0 precies 1 letter gekopieerd wordt.
+</p>
+<figure><pre><code>string tekst = &quot;regel tekst&quot;;
+string deelTekst = tekst.Substring(6, 5);</code></pre><figcaption></figcaption></figure>
+<p>
+Deze code heeft als resultaat dat in deelTekst de waarde &quot;tekst&quot; komt te staan omdat van de oorspronkelijke tekst vanaf positie 6 precies 5 letters gekopieerd worden.
+</p>
+</section><section>
+<h5>0.0.1.6.4. Length</h5>
+
+<p>
+Aantal tekens van de String bepalen. Achter <code>Length</code> hoeven
+geen haakjes openen en sluiten geplaatst te worden omdat het
+een <code>property</code> (eigenschap) van de string is en niet een <code>method</code>
+die je uitvoert.
+</p>
+<figure><pre><code>string tekst = &quot;regel tekst&quot;;
+int lengte = tekst.Length;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Deze code heeft als resultaat dat in lengte de waarde <code>11</code> komt te staan omdat de tekst precies elf lang is. Merk op: dit is inclusief spaties in de tekst.
+De <code>double quotes</code> om begin en einde van de String waarde aan te geven worden niet meegeteld.
+</p>
+<figure><pre><code>string tekst = &quot;&quot;;
+int lengte = tekst.Length;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Deze code heeft als resultaat dat in <em>lengte</em> de waarde <code>0</code> komt te staan
+omdat geen tekens in de string staan.
+</p>
+</section></section><section>
+<h4>0.0.1.7. int en double bewerkingen (operatoren)</h4>
+
+<p>
+Onderstaande bewerkingen zijn zowel op <code>int</code> <code>typen</code> als
+op <code>double</code> typen van toepassing:
+</p>
+<figure><pre><code>int k;
+k = 5 + 10;</code></pre><figcaption></figcaption></figure>
+<p>
+Aan variabele <em>k</em> wordt in de laatste regel code de waarde <code>15</code> toegekend
+omdat het <code>+</code>teken de waarden <code>5</code> en <code>10</code> bij elkaar optelt.
+</p>
+<figure><pre><code>int i = 2;
+int k;
+k = i + 1;</code></pre><figcaption></figcaption></figure>
+<p>
+Aan variabele <em>k</em> wordt in de laatste regel code de waarde 3 toegekend
+omdat het <code>+</code>teken de waarden <code>2</code> en <code>1</code> bij elkaar optelt.
+</p>
+<figure><pre><code>int i = -8;
+int k;
+k = 1 + i;</code></pre><figcaption></figcaption></figure>
+<p>
+Aan variabele <em>k</em> wordt in de laatste regel code de waarde <code>-7</code> toegekend
+omdat het <code>+</code>teken de waarden <code>1</code> en <code>-8</code> bij elkaar optelt.
+</p>
+<figure><pre><code>int i = 5;
+int j = 3;
+int k;
+k = i + j;</code></pre><figcaption></figcaption></figure>
+<p>
+Aan variabele <em>k</em> wordt in de laatste regel code de waarde <code>8</code> toegekend
+omdat het <code>+</code>teken de waarden uit <em>i</em> en <em>j</em> bij elkaar op telt.
+</p>
+<p>
+Bij bovenstaande voorbeelden kan de operator (het <code>+</code>teken)
+worden vervangen door één van de volgende mogelijkheden:
+</p><table style="border: solid thin"><tr><th>Symbool</th>
+<th>Uitwerking</th>
+</tr>
+<tr><td style="text-align: left">+</td>
+<td style="text-align: left">Optellen</td>
+</tr>
+<tr><td style="text-align: left">-</td>
+<td style="text-align: left">Aftrekken</td>
+</tr>
+<tr><td style="text-align: left">*</td>
+<td style="text-align: left">Vermenigvuldigen</td>
+</tr>
+<tr><td style="text-align: left">/</td>
+<td style="text-align: left">Delen</td>
+</tr>
+<tr><td style="text-align: left">%</td>
+<td style="text-align: left">Geeft de rest na deling. Bijvoorbeeld:</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">7 % 5 = 2</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">11 % 2 = 1</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">6 % 2 = 0</td>
+</tr>
+</table>
+<p>
+ 
+</p></section></section><section>
+<h3>0.0.2. Werken met keuzestructuren in C#</h3>
+<p>
+Dit hoofdstuk is geschreven als een <em>naslagwerk</em>,
+het is niet geschikt om uit te leren hoe je met variabelen programmeert.
+</p>
+
+<p>
+Als een stukje code soms wel en soms niet moet worden uitgevoerd,
+dan heb je een <code>if</code> of <code>if … else</code> <code>statement</code> nodig.
+Moet een stukje code soms één keer en soms vaker worden herhaald,
+dan heb je een <code>for</code> of <code>while</code> <code>statement</code> nodig.
+</p>
+<section>
+<h4>0.0.2.1. <code>if-statement</code></h4>
+<p>
+Deze structuur wordt gebruikt om een stukje code uit te voeren
+afhankelijk van een bepaalde situatie (de <code>conditie</code> genoemd).
+Algemene vorm:
+</p>
+<figure><pre><code>if ([conditie])
+{
+  [Uit te voeren code als conditie waar is]
+}</code></pre><figcaption></figcaption></figure>
+<p>
+waarbij <code>conditie</code> is een stelling die de waarde
+<code>true</code> (<em>waar</em>) of <code>false</code> (<em>niet waar</em>) heeft.
+</p>
+<p>
+Voorbeelden van condities:
+</p><table style="border: solid thin"><tr><th>Conditie</th>
+<th>Betekenis</th>
+</tr>
+<tr><td style="text-align: left">true</td>
+<td style="text-align: left">Waar</td>
+</tr>
+<tr><td style="text-align: left">false</td>
+<td style="text-align: left">Niet waar</td>
+</tr>
+<tr><td style="text-align: left">i &gt; 5</td>
+<td style="text-align: left">Is i groter dan 5?</td>
+</tr>
+<tr><td style="text-align: left">i &lt; 7</td>
+<td style="text-align: left">Is i kleiner dan 7?</td>
+</tr>
+<tr><td style="text-align: left">i &gt;= 1</td>
+<td style="text-align: left">Is i groter of gelijk aan 1?</td>
+</tr>
+<tr><td style="text-align: left">i &lt;= 2</td>
+<td style="text-align: left">Is i kleiner of gelijk aan 2?</td>
+</tr>
+<tr><td style="text-align: left">i  == 3</td>
+<td style="text-align: left">Is i precies gelijk aan 3?</td>
+</tr>
+<tr><td style="text-align: left">i  != 3</td>
+<td style="text-align: left">Is i ongelijk aan 3?</td>
+</tr>
+<tr><td style="text-align: left">stukjeText == &quot;abcde&quot;</td>
+<td style="text-align: left">Is <em>stukjeText</em> precies gelijk aan &quot;abcde&quot;?</td>
+</tr>
+<tr><td style="text-align: left">stukjeText &lt; &quot;abcde&quot;</td>
+<td style="text-align: left">Komt <em>stukjeText</em> eerder in het alphabet dan &quot;abcde&quot;?</td>
+</tr>
+<tr><td style="text-align: left">etc.</td>
+<td style="text-align: left"></td>
+</tr>
+</table>
+
+<p>
+Verder staat <em>[Uit te voeren code als conditie waar is]</em> voor
+een stukje code (dit kunnen meerdere regels code zijn)
+dat moet worden uitgevoerd als de conditie <code>true</code> (<em>waar</em>) is.
+</p>
+<p>
+Als precies één regel code moet worden uitgevoerd zou je ervoor
+kunnen kiezen de accolades openen en sluiten weg te laten,
+maar dit maakt de kans op bugs een stuk groter,
+dus dat raden we af.
+</p>
+<p>
+ 
+</p></section><section>
+<h4>0.0.2.2. <code>if … else … statement</code></h4>
+
+<p>
+Een if statement kan uitgebreid worden met een &quot;else&quot; blok. Als de conditie niet &quot;waar&quot; oplevert dan wordt de code in het else blok uitgevoerd.
+Algemene vorm:
+</p>
+<figure><pre><code>if ([conditie])
+{
+[Uit te voeren code als conditie waar is]
+}
+else
+{
+ [Uit te voeren code als conditie niet waar is]
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Merk op: of de conditie nu wel of niet waar is, altijd wordt één van de twee stukjes code uit-ge-voerd.
+</p>
+</section><section>
+<h4>0.0.2.3. Voorbeelden &quot;if …&quot; statement en &quot;if … else …&quot; statement</h4>
+
+<figure><pre><code>if (true)
+{
+	TextBox1.Text = &quot;test&quot;;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Het stukje code tussen { en } wordt altijd uitgevoerd,
+dus de <code>Text</code> van de <em>TextBox</em> wordt altijd &quot;test&quot; gemaakt.
+</p>
+<figure><pre><code>if (false)
+{
+	TextBox1.Text = &quot;test&quot;;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Het stukje code tussen { en } wordt nooit uitgevoerd.
+</p>
+<figure><pre><code>bool b = true;
+if (b)
+{
+	TextBox1.Text = &quot;test&quot;;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als <code>b</code> de waarde <code>true</code> (= <em>waar</em>)
+heeft wordt de <code>Text</code> in de <em>TextBox</em> &quot;test&quot;  gemaakt.
+Dit is hier nu altijd het geval omdat in dit stukje code
+aan variabele <code>b</code> alleen de waarde &quot;true&quot; wordt toegekend.
+</p>
+<figure><pre><code>int i = 10;
+if (i &lt; 5)
+{
+  i  = i + 1;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als getal <code>i</code> kleiner dan 5 is,
+dan wordt bij de waarde van <code>i</code> één opgeteld,
+anders gebeurt er niets.
+</p>
+<figure><pre><code>TextBox1.Text = &quot;test2&quot;;
+if (TextBox1.Text !=  &quot;test&quot;)
+{
+  TextBox1.Text = &quot;test3&quot;;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als de tekst in de textbox niet gelijk is aan &quot;test&quot; (dat is hier het geval) dan wordt de tekst van de textbox veranderd in &quot;test3&quot;.
+</p>
+<figure><pre><code>if (true)
+{
+	TextBox1.Text = &quot;test&quot;;
+}
+else
+{
+	TextBox1.Text = &quot;test2&quot;;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Het stukje code tussen de eerste { en } wordt altijd uitgevoerd,
+dus de <code>Text</code> van de <code>TextBox</code> wordt altijd &quot;test&quot; gemaakt.
+Het stukje code tussen de tweede { en } wordt nooit uitgevoerd.
+</p>
+<figure><pre><code>int i = 5;
+if (i &gt;= 10)
+{
+  i  = i + 1;
+}
+else
+{
+  i = i + 5;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als getal <em>i</em> groter of gelijk aan <code>10</code> is
+dan wordt bij getal <em>i</em> <code>1</code> opgeteld.
+Dit is hier niet het geval, dus wordt bij <em>i</em> <code>5</code> opgeteld.
+Resultaat: <em>i</em> krijgt de waarde <code>10</code>.
+</p>
+<figure><pre><code>int i = 5;
+if (i &gt;= 10)
+{
+  i  = i + 1;
+}
+else
+{
+  i = i + 5;
+  if (i &gt;= 10)
+  {
+    i = 20;
+  }
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als getal <em>i</em> groter of gelijk aan <code>10</code> is
+dan wordt bij getal <em>i</em> <code>1</code> opgeteld.
+Dit is hier niet het geval, dus wordt bij <em>i</em> <code>5</code> opgeteld.
+Resultaat: <em>i</em> krijgt de waarde <code>10</code>,
+vervolgens wordt gecontroleerd of <code>i &gt;= 10</code>,
+dat is nu het geval dus krijgt <em>i</em> uiteindelijk de waarde <code>20</code> toegekend.
+</p>
+</section><section>
+<h4>0.0.2.4. <code>while statement</code></h4>
+<p>
+Deze structuur wordt gebruikt om een stukje code uit te voe-ren
+zolang aan bepaalde voorwaarden is voldaan.
+Dit varieert van <code>0</code> keer de code uitvoeren tot het
+in de oneindigheid aantal keer uitvoeren van de code).
+</p>
+<p>
+Algemene vorm:
+</p><figure><pre><code>  while ([conditie])
+  {
+  [Uit te voeren code zolang de conditie waar is]
+  }</code></pre><figcaption></figcaption></figure>
+
+<p class="note">Na de eerste regel staat geen &quot;;&quot; teken.</p>
+<p class="note">Eerst wordt gecontroleerd of aan een voorwaarde is voldaan, dan pas wordt eventueel code uitgevoerd.</p>
+</section><section>
+<h4>0.0.2.5. <code>do while statement</code></h4>
+
+<p>
+Deze structuur wordt gebruikt om een stukje code uit te voeren. Elke keer nadat het stukje code is uitgevoerd wordt gecontroleerd of nog aan bepaalde voorwaarden is voldaan, zo ja, dan wordt de code opnieuw uitgevoerd. Het aantal keer uitvoeren van de code varieert van 1 keer de code uitvoeren tot het in de oneindigheid aantal keer uitvoeren van de code.
+</p>
+<p>
+Algemene vorm:
+</p><figure><pre><code>do
+{
+  [Uit te voeren code zolang de conditie waar is]
+} while ([conditie]);</code></pre><figcaption></figcaption></figure>
+
+<p class="note">Na de laatste regel staat een &quot;;&quot; teken.</p>
+<p class="note">Eerst wordt de code één keer uitgevoerd, dan pas wordt gecontroleerd of de code eventueel vaker moet worden uitgevoerd.</p><p>
+ 
+</p></section><section>
+<h4>0.0.2.6. Voorbeelden <code>while</code> en <code>do while statement</code></h4>
+
+<figure><pre><code>int i = 0;
+while(i &lt; 10)
+{
+	MessageBox.Show(&quot;Test&quot;);
+  i = i + 1;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele <em>i</em> krijgt in het begin de waarde <code>0</code>
+en er wordt net zo lang doorgegaan met <em>MessageBoxes</em> weergeven
+totdat <em>i</em> kleiner dan <code>10</code> is.
+De code wordt dus doorlopen met achtereenvolgens
+de waarden <code>0</code> , <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code> en <code>9</code>.
+Er worden daarom <code>10</code> <em>Messageboxes</em> getoond met de tekst <code>&quot;Test&quot;</code>.
+</p>
+<figure><pre><code>int i = 5;
+while(i &gt; 0)
+{
+	MessageBox.Show(&quot;Test&quot;);
+  i = i – 1;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele <em>i</em> krijgt in het begin de waarde <code>5</code> en er wordt
+direct gestopt als <em>i</em> de waarde <code>0</code> krijgt toegekend.
+De code wordt dus doorlopen met
+de waarden <code>5</code>, <code>4</code>, <code>3</code>, <code>2</code>, <code>1</code>.
+Er worden daarom <code>5</code> <em>Messageboxes</em> getoond met de tekst <code>&quot;Test&quot;</code>.
+</p>
+<figure><pre><code>int i = 10;
+do
+{
+	MessageBox.Show(&quot;Test&quot;);
+  i = i + 1;
+}
+while (i &lt; 5);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele <em>i</em> krijgt in het begin de waarde <code>10</code>,
+de code wordt uitgevoerd, en vervolgens
+wordt net zo lang doorgegaan met <em>Messageboxes</em> weergeven
+totdat <em>i</em> kleiner dan <code>5</code> is.
+De code wordt dus doorlopen met de waarde <code>10</code>.
+Er wordt daarom <code>1</code> <em>Messagebox</em> getoond met de tekst <code>&quot;Test&quot;</code>.
+</p>
+</section><section>
+<h4>0.0.2.7. <code>for statement</code></h4>
+
+<p>
+Deze structuur wordt gebruikt om een stukje code een
+vooraf bekend aantal keer uit te laten voeren.
+</p>
+<p>
+Algemene vorm:
+</p><figure><pre><code>for([teller variabele aanmaken]; [herhalingsconditie]; [teller variabele aanpassen])
+{
+  [herhaaldelijk uit te voeren code]
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+waarbij <em>[teller variabele aanmaken]</em>	een <code>variabele</code> met
+zelf te kiezen variabelenaam wordt aangemaakt en van een waarde voorzien.
+Veel gebruikte variabele namen voor een for statement zijn &quot;i&quot;, &quot;j&quot;, &quot;k&quot;
+omdat deze een hele korte naam hebben, dat leest in veel gevallen prettig.
+Ook &quot;index&quot;, &quot;count&quot; of &quot;teller&quot; worden vaak gebruikt.
+Het type variabele is meestal int.
+De waarde waarmee de teller wordt gevuld is afhankelijk van wat je
+aan het programmeren bent. In veel gevallen heeft deze de waarde <code>0</code>.
+</p>
+<p>
+Voorbeelden:
+</p><figure><pre><code>int i = 0</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>int j = 100</code></pre><figcaption></figcaption></figure>
+
+<p>
+Dan <em>[herhalingsconditie]</em>: deze uit te voeren code wordt
+net zo lang herhaald als uit de voorwaarde de waarde <code>true</code> komt.
+Hierin verwijs je naar de <em>teller</em> variabele.
+</p>
+<p>
+Voorbeelden:
+</p><figure><pre><code>i &lt; 10
+j &gt; 0</code></pre><figcaption></figcaption></figure>
+
+<p>
+[teller variabele aanpassen]
+	Het verhogen of verlagen van de teller. Vaak wordt deze met 1 verhoogd of verlaagd, soms in grotere stappen (bijv. <code>10</code>).
+</p>
+<p>
+Voorbeelden:
+</p>
+<figure><pre><code>i = i + 1
+j = j – 10</code></pre><figcaption></figcaption></figure>
+
+<p>
+[herhaaldelijk uit te voeren code]
+	Het stukje code (dit kunnen meerdere regels code zijn) dat moeten worden uitgevoerd zolang de herhalingsconditie &quot;true&quot; (waar) is.
+</p>
+<p>
+Ieder <code>for</code>statement is om te zetten naar een <code>while</code> statement
+dat hetzelfde doet, en andersom.
+ 
+</p></section><section>
+<h4>0.0.2.8. Voorbeelden <code>for statement</code></h4>
+
+<figure><pre><code>for(int i =0 ; i &lt; 10 ; i = i + 1)
+{
+	MessageBox.Show(&quot;Test&quot;);
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele <code>i</code> krijgt in het begin de waarde 0 en er wordt direct gestopt als i de waarde 10 krijgt toegekend. De code wordt dus doorlopen met de waarden 0,1,2,3,4,5,6,7,8 en 9. Er worden daarom 10 messagebox-en getoond met de tekst &quot;Test&quot;.
+</p>
+<figure><pre><code>for(int i =5;i &gt; 0; i = i - 1)
+{
+	MessageBox.Show(&quot;Test&quot;);
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele <code>i</code> krijgt in het begin de waarde 5 en er wordt direct gestopt als i de waarde 0 krijgt toegekend. De code wordt dus doorlopen met de waarden 5,4,3,2,1. Er worden daarom 5 messagebox-en getoond met de tekst &quot;Test&quot;.
+</p>
+<figure><pre><code>for(int i =0;i &lt; 10;i++)
+{
+	MessageBox.Show(&quot;Test&quot;);
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Hetzelfde resultaat als het eerste voorbeeld,
+maar dan in een verkorte schrijfwijze:
+</p><figure><pre><code>i = i + 1;</code></pre><figcaption></figcaption></figure>
+<p>
+is hetzelfde als
+</p><figure><pre><code>i++;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Hetzelfde resultaat als het tweede voorbeeld,
+maar dan in een verkorte schrijf-wijze:
+</p><figure><pre><code>for(int i =5;i &gt; 0; i--)
+{
+	MessageBox.Show(&quot;Test&quot;);
+}</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>i=i-1;</code></pre><figcaption></figcaption></figure>
+<p>
+is hetzelfde als
+</p><figure><pre><code>i--;</code></pre><figcaption></figcaption></figure>
+
+
+<p>
+De code
+</p><figure><pre><code>for(int i =0;i &lt; 10; i++)
+{
+	MessageBox.Show(&quot;Test &quot;+i);
+}</code></pre><figcaption></figcaption></figure>
+<p>
+heeft als resultaat dat <em>MessageBoxes</em>
+verschijnen met achtereenvolgens:
+</p><figure><pre><code>&quot;Test 0&quot;
+&quot;Test 1&quot;
+&quot;Test 2&quot;
+&quot;Test 3&quot;
+&quot;Test 4&quot;
+&quot;Test 5&quot;
+&quot;Test 6&quot;
+&quot;Test 7&quot;
+&quot;Test 8&quot;
+&quot;Test 9&quot;</code></pre><figcaption></figcaption></figure>
+
+<p>
+De code
+</p><figure><pre><code>for(int i =5;i &gt; 0; i = i - 2)
+{
+	MessageBox.Show(&quot;Test &quot;+i);
+}</code></pre><figcaption></figcaption></figure>
+<p>
+laat messagebox-en verschijnen met achtereenvolgens:
+</p><figure><pre><code>&quot;Test 5&quot;
+&quot;Test 3&quot;
+&quot;Test 1&quot;</code></pre><figcaption></figcaption></figure>
+<p>
+en tot slot geeft
+</p><figure><pre><code>for(int y =0;y &lt; 2; y++)
+{
+  for(int x =0;x &lt; 3; x++)
+  {
+    MessageBox.Show(&quot;(&quot;+x+&quot;,&quot;+y+&quot;)&quot;);
+  }
+}</code></pre><figcaption></figcaption></figure>
+<p>
+als resultaat <em>MessageBoxes</em> verschijnen met:
+</p><figure><pre><code>&quot;(0,0)&quot;
+&quot;(1,0)&quot;
+&quot;(2,0)&quot;
+&quot;(0,1)&quot;
+&quot;(1,1)&quot;
+&quot;(2,1)&quot;</code></pre><figcaption></figcaption></figure>
+
+
+
+
+
+</section></section><section>
+<h3>0.0.3. Werken met methoden in C#</h3>
+<p>
+Dit hoofdstuk is geschreven als een <em>naslagwerk</em>,
+het is niet geschikt om uit te leren hoe je met variabelen programmeert.
+</p>
+
+<section>
+<h4>0.0.3.1. Algemene structuur methoden</h4>
+
+<p>
+Een methode is een stukje code dat vanuit een ander stukje code
+is aan te roepen. Als een methode een waarde terug geeft
+welke gebruikt gaat worden in het stukje code waar vanuit
+deze is aangeroepen spreek je over een methode welke &quot;een waarde teruggeeft&quot;.
+Ook kunnen aan een methode één of meer waarden worden meegegeven.
+Dit worden argumenten genoemd.
+</p>
+</section><section>
+<h4>0.0.3.2. Belangrijkste voordelen van het gebruik van methoden:</h4>
+<ol><li>Overzichtelijkheid: Als alle code in één enkele event handler (bijv. <em>ButtonX_Click</em>) wordt geplaatst wordt je code al snel erg overzichtelijk.</li>
+<li>Werk verdelen: Als je voordat je gaat programmeren het programmeerwerk wilt verdelen kun je de te maken code opdelen in methoden en deze met verschillende programmeurs tegelijkertijd programmeren.</li>
+<li>Onderhoudbaarheid &amp; herbruikbaarheid: Als je op verschillende plaatsen in je programma hetzelfde stuk code vaker uit wilt voeren kun je vanaf de verschillende plaatsen een methode aanroepen die je maar één keer hoeft te programmeren.  Dat scheelt code en is gemakkelijker te onderhouden dan dat je code verschillende keren in je programma kopiert en plakt.</li>
+</ol>
+
+<p>
+Een methode heeft de volgende structuur:
+</p>
+<figure><pre><code>private [returnType] [methodeNaam]([parameters])
+{
+  …
+  [return returnWaarde]
+}</code></pre><figcaption></figcaption></figure>
+
+<dl><dt><code>private</code></dt>
+<dd>geeft aan dat de <code>methode</code> alleen binnen het huidige bestand (lees: <code>Form1</code>) kan worden aangeroepen. Wat dit precies inhoudt is voor dit vak niet interessant, hier wordt later op teruggekomen.</dd>
+<dt>[returnType]</dt>
+<dd>Het type van de waarde die de methode terug geeft. Als de methode geen waarde terug geeft, is dit <code>void</code> (<em>niets</em>). Voorbeelden: <code>int</code>, <code>double</code>, <code>bool</code>, <code>string</code>, <code>void</code>.</dd>
+<dt>[methodeNaam]</dt>
+<dd>Zelf gekozen naam voor de methode, te vergelijken met een zelf gekozen naam voor een variabele.	Voorbeelden: <em>TelOp</em>, <em>ToonMelding</em>, <em>Methode1</em>, <em>Abc</em>.</dd>
+<dt>[parameters]</dt>
+<dd>Optioneel onderdeel. Hiermee wordt opgegeven welk(e) type(n) waarde(n) moet worden meegegeven aan de methode en onder welke naam deze waarde binnen de method kunnen worden gebruikt. Meerdere parameters worden gescheiden met een &quot;,&quot;-teken.	Voorbeelden: <code>int deler</code>, <code>int getalA</code>, <code>int getalB</code>, <code>bool isIngelogd</code>, <code>double eenKommaGetal</code>.</dd>
+<dt>[return returnWaarde]</dt>
+<dd>Met <code>return</code>&quot; gevolgd door een waarde die aan het <em>[returnType]</em> voldoet wordt een waarde teruggegeven vanuit de methode aan het stukje code dat de methode heeft aangeroepen. Als <em>[returnType]</em> <code>void</code> is hoeft er geen return worden gebruikt. Voorbeelden: <code>return uitkomst;</code>, <code>return 10;</code>, <code>return mijnTekst;</code>, <code>return &quot;Hallo&quot;+&quot; daar!&quot;;</code>, <code>return getal &gt; 10;</code></dd>
+</dl>
+
+
+</section><section>
+<h4>0.0.3.3. Voorbeelden Methoden</h4>
+
+<p>
+Een aantal voorbeeldmethoden:
+</p>
+<figure><pre><code>    private int AddTwoNumbers(int number1, int number2)
+    {
+        int som;
+        som = number1 + number2
+        return som;
+    }
+
+    private int SquareANumber(int number)
+    {
+        return number * number;
+    }</code></pre><figcaption></figcaption></figure>
+
+<p>
+Bovenstaande methoden zijn als volgt aan te roepen:
+</p>
+<figure><pre><code>	int sum = AddTwoNumbers(8765, 287);</code></pre><figcaption></figcaption></figure>
+<p>
+of:
+</p><figure><pre><code>	int kwadraat = SquareANumber(63);</code></pre><figcaption></figcaption></figure>
+<p>
+of, beiden:
+</p><figure><pre><code>	int total = SquareANumber(AddTwoNumbers(1, 2));</code></pre><figcaption></figcaption></figure>
+
+<section>
+<h5>0.0.3.3.1. Tekst en uitleg (engelstalig) over methoden en parameters</h5>
+<p>
+Zie bijvoorbeeld
+<a href="http://www.c-sharpcorner.com/UploadFile/myoussef/CSharpMethodsP_111152005003025AM/CSharpMethodsP_1.aspx">C-sharpcorner over methods</a>
+voor meer uitleg.
+</p>
+</section></section></section><section>
+<h3>0.0.4. Handige sneltoetsen en opties in Visual Studio</h3>
+
+<p class="note">Als in een sneltoets combinatie een komma staat, dan moet eerst het deel voor de komma worden ingedrukt, dan laat je de toetsen los en druk je daarna de letter in die na de komma staat.</p>
+<table style="border: solid thin"><tr><th>Sneltoets</th>
+<th>Menu</th>
+<th>Toelichting</th>
+</tr>
+<tr><td style="text-align: left">CTRL-W, X</td>
+<td style="text-align: left">View → Toolbox</td>
+<td style="text-align: left">Maakt het Toolbox scherm met alle</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">visuele objecten zichtbaar.</td>
+</tr>
+<tr><td style="text-align: left">CTRL-W, P</td>
+<td style="text-align: left">View → Properties</td>
+<td style="text-align: left">Window	Scherm met de</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">eigenschappen van visuele objecten</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">tonen. Hier vind je ook de events</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">van de visuele objecten.</td>
+</tr>
+<tr><td style="text-align: left">CTRL-W, E</td>
+<td style="text-align: left">View → Error List</td>
+<td style="text-align: left">Toont het scherm met de eventuele</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">fouten die in je code gevonden zijn</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">(ververs het scherm door je project</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">opnieuw te build-en met de F6 knop,</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">zie hieronder).</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Dubbelklikken op een error navigeert</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">naar de plaats in je code waar de</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">fout is gevonden.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Tip: bekijk eerst de eerste fout,</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">andere fouten kunnen hier een gevolg</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">van zijn.</td>
+</tr>
+<tr><td style="text-align: left">F6</td>
+<td style="text-align: left">Build → Build Solution</td>
+<td style="text-align: left">Controleert je code op fouten en bouwt</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">vervolgens een uitvoerbaar bestand.</td>
+</tr>
+<tr><td style="text-align: left">F5</td>
+<td style="text-align: left">Debug → Start Debugging</td>
+<td style="text-align: left">Build je project (zie F6 hierboven) als</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">dat nog niet gebeurd is, en voert het</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">uitvoerbaar bestand vervolgens uit.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Dit doet hetzelfde als een klik op de knop</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">met het groene pijltje (<code>play</code>knop).</td>
+</tr>
+<tr><td style="text-align: left">Shift-F5</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Stop de uitvoer van je programma. Handig</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">als je programma vast loopt.</td>
+</tr>
+</table>
+
+
+</section><section>
+<h3>0.0.5. Online C-sharp tutorials</h3>
+
+<section>
+<h4>0.0.5.1. MSDN tutorial</h4>
+<p>
+<a href="http://msdn.microsoft.com/en-us/vcsharp/aa336766.aspx">MSDN How do I Learn C# tutorials (Engelstalig)</a>
+</p>
+<p>
+Bruikbaarheid:	*
+</p>
+<p>
+Toelichting: 	Enkele gedetailleerde walkthroughs. Aanrader als je al bekend bent met programmeren in een andere programmeertaal.
+</p>
+</section><section>
+<h4>0.0.5.2. techzine tutorial</h4>
+<p>
+<a href="http://www.techzine.nl/tutorials/358/3/c-les-1-beginnen-met-c-de-eerste-stapjes.html">Les 1: Beginnen met C# (Nederlandstalig)</a>
+</p>
+<p>
+Bruikbaarheid:	****
+</p>
+<p>
+Toelichting: 	Uitleg over het maken van een programma aan de hand van een voorbeeldprogramma dat telkens een stukje wordt uitgebreid. Het gebruik van variabelen, FOR en WHILE lus worden uitgelegd. Let op: in deze tutorial wordt een Console applicatie gemaakt, dit is iets anders dan een Form applicatie.
+</p>
+</section><section>
+<h4>0.0.5.3. Webbrowser tutorial</h4>
+<p>
+<a href="http://www.sitemasters.be/tutorials/17/1/564/CSharp.NET/CSharp_Zelf_een_WebBrowser_maken">Zelf een webbrowser maken (Nederlandstalig)</a>
+</p>
+<p>
+Bruikbaarheid:	*
+</p>
+<p>
+Toelichting: 	Tutorial waarin een webbrowser gebouwd wordt. Weinig toelichting op wat er gebeurt maar wel een leuk eindresultaat. Deze tutorial is vanaf lesweek 3 redelijk goed te maken.
+</p>
+</section><section>
+<h4>0.0.5.4. Blackwasp tutorial</h4>
+<p>
+<a href="http://www.blackwasp.co.uk/">BlackWasp</a>
+</p>
+<p>
+Bruikbaarheid:	***
+</p>
+<p>
+Toelichting: 	Verzameling tutorials en artikelen (Engelstalig).
+</p>
+
+</section></section><section>
+<h3>0.0.6. Online C-sharp boeken</h3>
+
+<p>
+<a href="http://csharp-station.com/">C# Station Tutorial (Engelstalig)</a>
+Bruikbaarheid:	***
+Toelichting: 	Uitleg over de basis onderdelen van C# zoals expressies, typen, variabelen en controlestructuren. De &quot;lessons&quot; 1 t/m 5 zijn interessant voor OIS.
+</p>
+
+<p>
+<a href="http://www.robmiles.com/c-yellow-book/Rob%20Miles%20CSharp%20Yellow%20Book%202010.pdf">C# Yellow Book (Engelstalig)</a>
+Bruikbaarheid:	**
+</p><p>
+Toelichting: 	Compleet boek over programmer constructies en onderwerpen. Wellicht handig als naslagwerk, niet geschikt als leerboek voor OIS. Let op: in deze tutorial wordt uitgegaan van een Console applicatie als beginpunt, dit is iets anders dan een Form applicatie.
+</p>
+
+<p>
+ 
+</p></section><section>
+<h3>0.0.7. Bruikbare technieken proftaak</h3>
+<section>
+<h4>0.0.7.1. 3d objecten</h4>
+<p>
+In de eerste opdracht over XNA heb je met plaatjes gewerkt en niet met 3D-modellen.
+3D is mooier, echter en interessanter. Maar ook lastiger te implementeren.
+</p>
+<p>
+Op Internet zijn aardige voorbeelden te vinden.
+</p>
+<p>
+Probeer eerst deze uit:
+<a href="http://msdn.microsoft.com/en-us/library/bb203897(v=xnagamestudio.31).aspx">MSDN over XNA en 3D</a>
+</p>
+</section><section>
+<h4>0.0.7.2. WIIMote</h4>
+<p>
+In de opdracht &quot;1e XNA&quot;  heb je kunnen zien dat het XNA framework
+was toegevoegd aan Visual Studio 2010.
+Dit is te vinden in de solution Explorer onder Reference.
+</p>
+<p>
+
+<figure>
+	<img src="figures/xnaframework.png" width="70%"/>
+	<figcaption>eerste XNA</figcaption>
+</figure>
+</p>
+
+<p>
+In het programma gebruikte je het keyword <code>using</code> om gebruik te maken van de mogelijkheden van het Framework.
+</p>
+<p>
+Om een component te gebruiken in Visual Studio ga je altijd op deze manier te werk. Het XNA framework heb je geïnstalleerd en daarbij werden de referentie aan VS toegevoegd.
+Net zoals het XNA framework aan Visual Studio 2010 is toegevoegd kun je een softwarecomponent toevoegen om de Wiimote te gebruiken. Deze component is te vinden op het Internet  genaamd WiiMoteLib.dll
+Hiervoor is er geen installatie nodig, maar je kunt met een rechtermuisklik op reference in het menuutje kiezen voor add reference. Hierna browse je naar de juiste file.
+</p>
+<p>
+De <em>Wiimote</em> gaat communiceren met je applicatie via <em>Bluetooth</em>. Het instellen van Bluetooth kun je ook overal op het Internet vinden. Google: Wiimote Bluetooth
+Ook zijn er verschillende testprogramma’s te vinden.
+</p>
+</section><section>
+<h4>0.0.7.3. XBOX 360</h4>
+<p>
+Bij de ISSD kun je ook een XBOX lenen om daar je XNA-applicatie op te draaien.
+In de C#/XNA programma is een kleine aanpassing nodig om de applicatie geschikt te maken voor de XBOX.
+Voer de volgende stappen uit om een game van je laptop naar de Xbox te porten:
+•	Rechtermuisknop klikken op je windowsproject
+•	Selecteer &quot;Create a Copy of Project for Xbox 360&quot;
+</p>
+<p>
+Zie uitgebreider http://msdn.microsoft.com/en-us/library/bb976061.aspx
+Even uitproberen. Je moet namelijk in een lan zitten, ook lid zijn van creatorclub enzo.
+</p>
+<p>
+ 
+</p></section></section><section>
+<h3>0.0.8. XNA en/of gaming bronnen</h3>
+<p>
+Let op: XNA wordt niet meer gebruikt voor OIS. Wij gebruiken MonoGame.
+</p>
+<p>
+Tutorials voor veelgebruikte gaming aspecten (let op: deze zijn gemaakt voor XNA 3.0 dus werken soms net iets anders)
+</p>
+<p>
+<a href="http://www.xnadevelopment.com/tutorials.shtml">http://www.xnadevelopment.com/tutorials.shtml</a>
+</p>
+<p>
+<a href="http://creators.xna.com">http://creators.xna.com</a>
+</p>
+<p>
+<a href="http://creators.xna.com/en-us/Academia">http://creators.xna.com/en-us/Academia</a>
+</p>
+<p>
+<a href="http://www.xbox.com/en-US/kinect">http://www.xbox.com/en-US/kinect</a>
+</p>
+<p>
+<a href="http://depts.washington.edu/cmmr/Research/XNA_Games/XNACS1WorkBook.html">http://depts.washington.edu/cmmr/Research/XNA_Games/XNACS1WorkBook.html</a>
+</p>
+<p>
+<a href="http://dxframework.org/">http://dxframework.org/</a>
+</p>
+<p>
+<a href="http://msdn2.microsoft.com/en-us/library/bb200104.aspx">Game Studio Express</a>
+</p>
+<p>
+<a href="http://www.academicresourcecenter.net/curriculum/pfv.aspx?ID=6878">Video Game programming</a>
+</p>
+<p>
+<a href="http://www.garagegames.com/products/torque/x/">http://www.garagegames.com/products/torque/x/</a>
+</p>
+<p>
+<a href="https://www.academicresourcecenter.net/curriculum/FacetMain.aspx?FT=Tag&TagList=3&ResultsTitle=Gaming%20and%20Graphics&ShowResults=1">https://www.academicresourcecenter.net/curriculum/FacetMain.aspx?FT=Tag&TagList=3&ResultsTitle=Gaming%20and%20Graphics&ShowResults=1</a>
+</p>
+<p>
+<a href="http://www.youtube.com/watch?v=6AKgH4On65A">http://www.youtube.com/watch?v=6AKgH4On65A</a>
+</p>
+<p>
+<a href="http://www.youtube.com/watch?v=c_LrVqI6StY">http://www.youtube.com/watch?v=c_LrVqI6StY</a>
+</p>
+<p>
+<a href="http://graphics.cs.columbia.edu/projects/goblin/">http://graphics.cs.columbia.edu/projects/goblin/</a>
+</p>
+<p>
+ 
+</p></section><section>
+<h3>0.0.9. XNA problemen oplossen</h3>
+<section>
+<h4>0.0.9.1. No suitable graphics card found</h4>
+<p>
+Het kan gebeuren dat XNA de volgende foutmelding geeft:
+</p>
+<p>
+Dit probleem is op te lossen door de instelling &quot;de volledige  HiDef API gebruiken&quot; die standaard aan staat te veranderen in &quot;Use Reach to access a limited API set ….&quot;.  Deze instelling is te vinden bij &quot;Project Properties&quot; op het tabblad &quot;XNA Game Studio&quot;.
+</p>
+</section><section>
+<h4>0.0.9.2. XNA programma kan niet worden uitgevoerd</h4>
+<p>
+Het gebruik hiervan op zogenaamde ‘N’ versies van windows 7 kan tot problemen leiden bij het gebruik van XNA. Voor meer info over ‘N’ versies van windows 7, zie: http://en.wikipedia.org/wiki/Windows_7_editions#Sub-editions
+N versies van windows 7 missen Windows Media Player en de daarbij horende codecs, door EU restricties. Gevolg hiervan is dat XNA programma’s die (bijvoorbeeld) WAV bestanden bevatten niet kunnen compileren.
+In plaats van een melding dat je WMP/codecs mist, krijg je bij het compileren een cryptische melding over een missende DLL die je, eenmaal gevonden, niet kunt toevoegen aan je project
+Oplossing voor dit probleem: Windows Media Player downloaden en installeren, zie:
+http://windows.microsoft.com/en-US/windows/downloads/windows-media-player
+(Deze linkt door naar deze link: http://www.microsoft.com/downloads/en/details.aspx?FamilyID=31017ed3-166a-4c75-b90c-a6cef9b414c4)
+
+</p></section></section>
+      </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="../support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>
