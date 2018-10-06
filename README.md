@@ -1,4 +1,4 @@
-# softwarelessons (work in progress)
+# softwarelessons
 
 Collecting the OIS12-material from GitHub Pages. 
 
