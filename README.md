@@ -1,11 +1,15 @@
 # softwarelessons
 
-Collecting the OIS12-material from GitHub Pages. 
+Remark (201908): Newer versions can be found at 
+[https://stasemsoft.github.io/softwarelessons](https://stasemsoft.github.io/softwarematerial).
+(end remark)
 
-To see the material follow the link: 
+Collecting the OIS12-material from GitHub Pages.
 
-[https://stasemsoft.github.io/softwarelessons](https://stasemsoft.github.io/softwarelessons). 
+To see the material follow the link:
+
+[https://stasemsoft.github.io/softwarelessons](https://stasemsoft.github.io/softwarelessons).
 
 
-Content generated using 
+Content generated using
 [https://github.com/pillar-markup](https://github.com/pillar-markup)
